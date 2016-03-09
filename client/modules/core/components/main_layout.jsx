@@ -4,7 +4,6 @@ import Navigation from './navigation.jsx';
 const Layout = ({content = () => null }) => (
   <div>
     <header>
-    <Navigation />
     </header>
 
     <div>

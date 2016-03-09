@@ -5,14 +5,14 @@ import {check} from 'meteor/check';
 import smartMethods from "meteor/utilities:smart-methods";
 
 const isLoggedIn = user => !!user;
-const isOwner = (user, document) => user._id === document.userId;
+const isOwner = (user, document) => user._id === document.createdBy;
 
 export default function () {
   Constellations.smartMethods({
     createCallback: function (user, document) {
       document = _.extend(document, {
-        createdAt: new Date(),
-        userId: Meteor.userId()
+        createdOn: new Date(),
+        createdBy: Meteor.userId()
       });
       return document;
     },

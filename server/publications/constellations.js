@@ -7,7 +7,6 @@ import smartPublish from "meteor/utilities:smart-publications";
 
 export default function () {
   Constellations.smartPublish("constellations.list")
-
 };
 
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import Navigation from '../components/navigation.jsx';
 import Title from '../components/title.jsx';
 import InputBox from '../components/input_box.jsx';
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -6,10 +7,6 @@ import ThemeManager from 'material-ui/lib/styles/theme-manager';
 import GTheme from '/client/configs/theme.jsx';
 import Paper from 'material-ui/lib/paper';
 import RaisedButton from 'material-ui/lib/raised-button';
-
-function handleTouchTap() {
-  alert('onTouchTap triggered on the title component');
-}
 
 const styles = {
   title: {
@@ -33,6 +30,7 @@ class Core extends React.Component {
   render() {
     return (
       <div>
+        <Navigation />
         <Title origin={this.props.origin} direction={this.props.direction}></Title>
         <form>
           <input type="radio" name="universe" value="universe" defaultChecked="true" onClick={this.newDirection.bind(this)}>Universe</input> 

@@ -4,7 +4,6 @@ import coreModule from './modules/core';
 
 const module = {
   load(context, actions) {
-	  initCore: actions.core.initCore
   }
 };
 
