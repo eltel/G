@@ -1,6 +1,6 @@
 ## G 
 
-G is an open source database app that is written in [Mantra](https://github.com/kadirahq/mantra) and uses the following packages excerpted from [Nova](https://github.com/TelescopeJS/Telescope/tree/nova).
+G is an open source database app that is written using [Mantra](https://github.com/kadirahq/mantra) and the following packages excerpted from [Nova](https://github.com/TelescopeJS/Telescope/tree/nova).
 
 [React List Container](https://github.com/meteor-utilities/react-list-container)
 
