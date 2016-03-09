@@ -16,7 +16,7 @@ Toggle state variable `ORIGIN` from Create and Search buttons.
 
 How to show toggled radio buttons after `preventDefault` has been called?
 
-Toggle the left nav.
+Toggle the left nav and save the state (open/closed).
 
 Call variable [React List Container](https://github.com/meteor-utilities/react-list-container) and [React Form Containers](https://github.com/meteor-utilities/React-Form-Containers) from `input_box.jsx` based on the value of `ORIGIN` and `DIRECTION`.
 
