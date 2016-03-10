@@ -1,9 +1,9 @@
-import {Kinds} from '/lib/collections';
+import {HyperNodes} from '/lib/collections';
 import {Meteor} from 'meteor/meteor';
 import {check} from 'meteor/check';
 
 export default function () {
-  Meteor.publish('kinds.list', function () {
+  Meteor.publish('hypernodes.list', function () {
     const selector = {};
     const options = {
       fields: {_id: 1, title: 1},
@@ -11,13 +11,12 @@ export default function () {
       limit: 10
     };
 
-    return Kinds.find(selector, options);
+    return HyperNodes.find(selector, options);
   });
 
-  Meteor.publish('kinds.single', function (selectId) {
+  Meteor.publish('hypernodes.single', function (selectId) {
     check(selectId, String);
     const selector = {_id: selectId};
-    return Kinds.find(selector);
+    return HyperNodes.find(selector);
   });
-
 }

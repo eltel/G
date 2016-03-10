@@ -1,10 +1,10 @@
-import {Kinds} from '/lib/collections';
+import {HyperNodes} from '/lib/collections';
 import {Meteor} from 'meteor/meteor';
 import {check} from 'meteor/check';
 
 export default function () {
   Meteor.methods({
-    'kinds.create'(_id, title, content) {
+    'hypernodes.create'(_id, title, content) {
       check(_id, String);
       check(title, String);
       check(content, String);
@@ -14,12 +14,12 @@ export default function () {
 
       // XXX: Do some user authorization
       const createdAt = new Date();
-      const Kind = {_id, title, content, createdAt};
-      Kinds.insert(kind);
+      const hypernode = {_id, title, content, createdAt};
+      HyperNodes.insert(hypernode);
     }
   });
 
-  SearchSource.defineSource('kinds', function(searchText, options) {
+  SearchSource.defineSource('nodes', function(searchText, options) {
   var options = {sort: {isoScore: -1}, limit: 20};
   
   if(searchText) {
@@ -29,9 +29,9 @@ export default function () {
       {postTitle: regExp}
     ]};
 
-    return Kinds.find(selector, options).fetch();
+    return Nodes.find(selector, options).fetch();
   } else {
-    return Kinds.find({}, options).fetch();
+    return Nodes.find({}, options).fetch();
   }
 });
 

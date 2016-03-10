@@ -1,11 +1,13 @@
 import nodes from './nodes';
 import constellations from './constellations';
 import galaxies from './galaxies';
-import kinds from './kinds';
+import trees from './trees';
+import hypernodes from './hypernodes';
 
 export default function () {
   nodes();
+  hypernodes();
   constellations();
   galaxies();
-  kinds();
+  trees();
 }
