@@ -1,6 +1,6 @@
-## G 
+# G 
 
-G is an open source database app that is written using [Mantra](https://github.com/kadirahq/mantra) and the following packages excerpted from [Nova](https://github.com/TelescopeJS/Telescope/tree/nova).
+G is an open source graph database app that is written using [Mantra](https://github.com/kadirahq/mantra) and the following packages excerpted from [Nova](https://github.com/TelescopeJS/Telescope/tree/nova).
 
 [React List Container](https://github.com/meteor-utilities/react-list-container)
 
@@ -13,11 +13,9 @@ G is an open source database app that is written using [Mantra](https://github.c
 
 ### Today's Issues
 
-Toggle state variable `ORIGIN` from Create and Search buttons.
+Get buttons working in material-ui.
 
-How to show toggled radio buttons after `preventDefault` has been called?
-
-Toggle the left nav and save the state (open/closed).
+Show toggled radio buttons after `preventDefault` has been called.
 
 Call variable [React List Container](https://github.com/meteor-utilities/react-list-container) and [React Form Containers](https://github.com/meteor-utilities/React-Form-Containers) from `input_box.jsx` based on the value of `ORIGIN` and `DIRECTION`.
 

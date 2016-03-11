@@ -1,8 +1,8 @@
 export default {
-  setOrigin({Meteor, LocalState, FlowRouter}, origin) {
+  setOrigin({Meteor, LocalState}, origin) {
     return LocalState.set('ORIGIN', origin);
   },
-  setDirection({Meteor, LocalState, FlowRouter}, direction) {
+  setDirection({Meteor, LocalState}, direction) {
     return LocalState.set('DIRECTION', direction);
   }
 };

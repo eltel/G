@@ -29,15 +29,14 @@ const style = {
 class Core extends React.Component {
   render() {
     return (
-      <div>
-        <Navigation />
+      <div>     
+        <Navigation origin={this.props.origin} setOrigin={this.props.setOrigin}></Navigation>
         <Title origin={this.props.origin} direction={this.props.direction}></Title>
         <form>
           <input type="radio" name="universe" value="universe" defaultChecked="true" onClick={this.newDirection.bind(this)}>Universe</input> 
           <input type="radio" name="constellation" value="constellation" onClick={this.newDirection.bind(this)}>Constellation</input> 
           <input type="radio" name="galaxy" value="galaxy" onClick={this.newDirection.bind(this)}>Galaxy</input> 
        </form>
-
         <InputBox origin={this.props.origin} direction={this.props.direction}></InputBox>
       </div>
     );
@@ -53,7 +52,6 @@ class Core extends React.Component {
 
     setDirection(directionRef);
   }
-
 }
 
 export default Core;
