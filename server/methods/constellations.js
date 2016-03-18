@@ -1,6 +1,7 @@
-import {Constellations} from '/lib/collections';
-import {Meteor} from 'meteor/meteor';
-import {check} from 'meteor/check';
+import Meteor from 'meteor/meteor';
+import check from 'meteor/check';
+import Constellations from '/lib/schemas/constellations';
+import Meta from '/lib/schemas/meta';
 
 import smartMethods from "meteor/utilities:smart-methods";
 
@@ -12,31 +13,24 @@ export default function () {
     createCallback: function (user, document) {
       document = _.extend(document, {
         createdOn: new Date(),
-        createdBy: Meteor.userId()
+        createdBy: Meteor.userId(),
+        editedOn: new Date(),
+        editedBy: Meteor.userId(),
+        admin: Meteor.userId(),
+        approvedEditors: Meteor.userId()
       });
       return document;
+    },
+    editCallback: function (currentUser, modifier, originalDocument) {
+      modifier.$set.editedOn = new Date();
+      modifier.$set.editedBy = Meteor.userId();
+      return modifier;
     },
     deleteCallback: isOwner
   });
 };
 
-// Tasks.smartMethods({
-//   createCallback: function (currentUser, document) {
-//     document = _.extend(document, {
-//       createdAt: new Date(),
-//       owner: currentUser._id,
-//       username: currentUser.username
-//     });
-//     return document;
-//   },
-//   editCallback: function (currentUser, modifier, originalDocument) {
-//     modifier.$set.editedAt = new Date();
-//     return modifier;
-//   },
-//   deleteCallback: function (currentUser, document) {
-//     return currentUser._id === document.userId;
-//   }
-// });
+
 
 //   SearchSource.defineSource('constellations', function(searchText, options) {
 //   var options = {sort: {isoScore: -1}, limit: 20};
