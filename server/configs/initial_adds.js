@@ -1,8 +1,8 @@
 import Constellations from '/lib/schemas/constellations';
-import nodes from '/lib/schemas/nodes';
-import galaxies from '/lib/schemas/galaxies';
-import trees from '/lib/schemas/trees';
-import hypernodes from '/lib/schemas/hypernodes';
+import Nodes from '/lib/schemas/nodes';
+import Galaxies from '/lib/schemas/galaxies';
+import Trees from '/lib/schemas/trees';
+import Hypernodes from '/lib/schemas/hypernodes';
 import Meta from '/lib/schemas/meta';
 import Admin from '/lib/schemas/admin';
 
