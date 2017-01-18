@@ -31,8 +31,9 @@ Set initial states in `context.js`.
 
 * Clone this repo
 * Do `npm install` or 'yarn install' to install dependencies
+* Make sure you've installed create-react-app locally if none is available run 'npm install -g create-react-app'
 
-* Make sure you've installed create-react-app locally
+
 
 
 
