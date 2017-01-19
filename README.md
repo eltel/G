@@ -17,7 +17,7 @@ G is an open source graph database app.
 
 ### Today's Issues
 
-Discuss which states we are going to work with, and how to apply GraphQL & Mantra.
+Discuss which states we are going to work with, and how to apply GraphQL & Redux.
 
 <!-- Call variable [React List Container](https://github.com/meteor-utilities/react-list-container) and [React Form Containers](https://github.com/meteor-utilities/React-Form-Containers) from `input_box.jsx` based on the value of `ORIGIN` and `DIRECTION`. -->
 
@@ -31,8 +31,9 @@ Set initial states in `context.js`.
 
 * Clone this repo
 * Do `npm install` or 'yarn install' to install dependencies
+* Make sure you've installed create-react-app locally if none is available run 'npm install -g create-react-app'
 
-* Make sure you've installed create-react-app locally
+
 
 
 
@@ -44,5 +45,5 @@ Access the app on <http://localhost:3000>
 Run tests with:
 
 ```
-npm test
+npm test or yarn test
 ```
