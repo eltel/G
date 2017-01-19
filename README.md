@@ -45,5 +45,5 @@ Access the app on <http://localhost:3000>
 Run tests with:
 
 ```
-npm test or yan test
+npm test or yarn test
 ```
