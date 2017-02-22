@@ -39,7 +39,7 @@ Set initial states in `context.js`.
 
 ### Running The App
 
-Start your app by running `node server.js`.
+Start your app by running `node index.js`.
 Access the app on <http://localhost:3000>
 
 As necessary, rebuild client side code to incorporate changes by running `npm run build`.
