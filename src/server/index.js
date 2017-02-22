@@ -1,12 +1,11 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const routes = require('./src/server/routes.js');
+import express from 'express';
+import mongoose from 'mongoose';
+import routes from './routes';
 
 const app = express();
 
-// TODO
-// mongoose.connect('mongodb://databaseaddresshere');
-const db = null; // mongoose.connection;
+mongoose.connect('mongodb://gee-dev:developer@ds031915.mlab.com:31915/heroku_8xfxv8j2');
+const db = mongoose.connection;
 
 app.use('/static', express.static(`${process.cwd()}/build/static`));
 

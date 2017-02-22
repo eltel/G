@@ -1,8 +1,8 @@
 'use strict';
 
-const fetch = require('isomorphic-fetch');
+import fetch from 'isomorphic-fetch';
 
-module.exports = function AuthApi() {
+export default function AuthApi() {
   const clientId = process.env.AUTH0_CLIENT_ID || '';
   const apiUrl = process.env.AUTH0_API_URL || '';
 
@@ -49,4 +49,4 @@ module.exports = function AuthApi() {
       next();
     });
   };
-};
+}
