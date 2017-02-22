@@ -2,7 +2,7 @@
 
 import bodyParser from 'body-parser';
 import graphqlHTTP from 'express-graphql';
-import schema from './graphql-testing';
+import schema from './graphql';
 import AuthApi from './apis/auth';
 
 export default function routes(app, db) {
