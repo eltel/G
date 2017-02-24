@@ -1,27 +1,10 @@
- # G
+# G
 
 G is an open source graph database app.
 
-
-
-<!-- [Mantra](https://github.com/kadirahq/mantra) and the following packages excerpted from [Nova](https://github.com/TelescopeJS/Telescope/tree/nova).
-
-[React List Container](https://github.com/meteor-utilities/react-list-container)
-
-[React Form Containers](https://github.com/meteor-utilities/React-Form-Containers)
-
-[Smart Methods](https://github.com/meteor-utilities/smart-methods)
-
-[Smart Publications](https://github.com/meteor-utilities/smart-publications) -->
-
-
 ### Today's Issues
 
-Discuss which states we are going to work with, and how to apply GraphQL & Redux.
-
-<!-- Call variable [React List Container](https://github.com/meteor-utilities/react-list-container) and [React Form Containers](https://github.com/meteor-utilities/React-Form-Containers) from `input_box.jsx` based on the value of `ORIGIN` and `DIRECTION`. -->
-
-Set initial states in `context.js`.
+Join the mailing list  getgee@lists.riseup.net if you are a developer and would like to be added to the trello and slack
 
 
 ##### Pull requests welcome.
@@ -30,11 +13,9 @@ Set initial states in `context.js`.
 ### Setting Up
 
 * Clone this repo
+* Make sure you've installed the latest version of mongodb and node.js
 * Do `npm install` or 'yarn install' to install dependencies
 * Make sure you've installed create-react-app locally if none is available run 'npm install -g create-react-app'
-
-
-
 
 
 ### Running The App
