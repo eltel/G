@@ -28,19 +28,20 @@ There are 5 places you can be in G:
 
 G does not dictate an official reality. Each node can have multiple realities, linked in a hypernode. Reality types are T, L, P: Temporal, Linguistic, Perceptive. A node can be more than one type, ie L and T. The default is P.  Different temporal realities shows a change over time, different linguistic realities may relate to language or aliases, and different perceptive realities show different viewpoints on the same node. All realities are always viewable by tapping a node, but each constellation selects only one reality per node. Multiple realities of the same node may be used in a constellation; for instance all the temporal realities for one event can be pulled into a constellation to create a timeline. All the realities are referred to collectively as a hypernode.
 
-Type: P - default
-Type: L - search language constellation in metaverse, select language. Allow multiple realities of the same language.
-Type: T - do not allow exact duplicates, verify time is different on temporal. Temporal can be explicit (from and to date) or relative (if placed on a timeline.)
+* Type: P - default
+* Type: L - search language constellation in metaverse, select language. Allow multiple realities of the same language.
+* Type: T - do not allow exact duplicates, verify time is different on temporal. Temporal can be explicit (from and to date) or relative (if placed on a timeline.)
 
 
 
 #### Node types
 
 Nodetypes P E C T M I: Person, Event, Collective, Thing, Media, Idea, can only be one
-If P, input name
-If E or C, input name, description, geotags (associate geotags w date range, can be multiple sets)
-If T, input name, description, image
-If M, input keywords, title, description, 
+
+* If P, input name
+* If E or C, input name, description, geotags (associate geotags w date range, can be multiple sets)
+* If T, input name, description, image
+* If M, input keywords, title, description, 
 
 
 ### Constellations
@@ -51,16 +52,19 @@ G is used as a group (even if it is a group of one). G is designed to encourage 
 
 Two constellations can elect to merge with each other. A merge will delete one constellation, combine the teams, and allow the editors to create one constellation from the two. 
 
-Any constellations can be joined with any other constellations in a separate read-only Galaxy. This will just allow connections to be made between the graphs while each constellation maintains full autonomy. 
-
 All contributions to a constellation keep a record of the editor. Individual effort in a group is recognized individually. 
+
+
+### Galaxies
+
+Any constellations can be joined with any other constellations in a separate read-only Galaxy. This will just allow connections to be made between the graphs while each constellation maintains full autonomy. 
 
 
 ### G conventions
 
-Hover will display a static image
-Single click will display full data and allow editing if you have permission
-Double click will open a different part of G (Universe, Constellations, Galaxies or Metaverse)
+* Hover will display a static image
+* Single click will display full data and allow editing if you have permission
+* Double click will open a different part of G (Universe, Constellations, Galaxies or Metaverse)
 
 
 
