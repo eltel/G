@@ -14,7 +14,8 @@ Join the mailing list  getgee@lists.riseup.net if you are a developer and would 
 
 * Clone this repo
 * Make sure you've installed the latest version of mongodb and node.js
-* Do `yarn install` or 'yarn install' to install dependencies
+* Do `yarn install` to install dependencies
+* Rebuild client side code to incorporate changes by running `yarn run build`.
 * Make sure you've installed create-react-app locally if none is available run 'yarn install -g create-react-app'
 
 
@@ -22,8 +23,6 @@ Join the mailing list  getgee@lists.riseup.net if you are a developer and would 
 
 Start your app by running `node index.js`.
 Access the app on <http://localhost:3000>
-
-As necessary, rebuild client side code to incorporate changes by running `yarn run build`.
 
 Run tests with:
 
