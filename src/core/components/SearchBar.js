@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Title from '../components/title2.jsx';
+import Title from '../components/title.jsx';
 
 class SearchBar extends Component {
   constructor(props) {

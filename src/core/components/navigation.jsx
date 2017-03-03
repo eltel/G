@@ -8,11 +8,11 @@ import AppBar from 'material-ui/AppBar';
  import Create from 'material-ui/svg-icons/content/add-circle-outline';
  import Search from 'material-ui/svg-icons/action/search';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import add from '../buttons/svg/add.svg';
-import search from '../buttons/svg/search.svg';
-import logo from '../buttons/svg/logo.svg';
-import user from '../buttons/svg/user.svg';
-import help from '../buttons/svg/help.svg';
+import add from '../components/buttons/svg/add.svg';
+import search from '../components/buttons/svg/search.svg';
+import logo from '../components/buttons/svg/logo.svg';
+import user from '../components/buttons/svg/user.svg';
+import help from '../components/buttons/svg/help.svg';
 // import GTheme from '../client/configs/theme.jsx';
 
 // Can't import svg's from Public - why?

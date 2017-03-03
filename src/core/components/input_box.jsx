@@ -1,10 +1,10 @@
 import React from 'react';
-import SearchUniverse from '../components/universe_search.jsx';
-import SearchConstellation from '../components/constellation_search.jsx';
-import SearchGalaxy from '../components/galaxy_search.jsx';
-import CreateUniverse from '../components/universe_create.jsx';
-import CreateConstellation from '../components/constellation_search.jsx';
-import CreateGalaxy from '../components/galaxy_create.jsx';
+// import SearchUniverse from '../universe/components/universe_search.jsx';
+// import SearchConstellation from '../constellations/components/constellation_search.jsx';
+// import SearchGalaxy from '../galaxies/components/galaxy_search.jsx';
+// import CreateUniverse from '../universe/components/universe_create.jsx';
+// import CreateConstellation from '../constellations/components/constellation_search.jsx';
+// import CreateGalaxy from '../galaxies/components/galaxy_create.jsx';
 
 
 var components = {
