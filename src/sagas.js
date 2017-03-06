@@ -1,11 +1,9 @@
 import { takeLatest, delay } from 'redux-saga';
 import { call, select, put } from 'redux-saga/effects';
-import { change } from 'redux-form';
-import { browserHistory } from 'react-router';
 import _ from 'lodash';
 
-import * as actions from '../actions';
-import postQuery from '../api';
+import * as actions from './actions';
+import postQuery from './api';
 
 const apiMap = [
   'fetchUsers',

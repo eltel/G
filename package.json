@@ -42,6 +42,7 @@
     "react-dev-utils": "^0.4.2",
     "react-redux": "^5.0.2",
     "recursive-readdir": "2.1.0",
+    "redux-saga": "^0.14.3",
     "strip-ansi": "3.0.1",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
@@ -103,8 +104,15 @@
     }
   },
   "babel": {
-    "presets": ["es2015", "stage-2", "react"],
-    "plugins": ["react-require", "babel-root-slash-import"]
+    "presets": [
+      "es2015",
+      "stage-2",
+      "react"
+    ],
+    "plugins": [
+      "react-require",
+      "babel-root-slash-import"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"

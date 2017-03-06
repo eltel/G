@@ -1,15 +1,15 @@
 import { combineReducers } from 'redux';
 
-import constellations from './constellations/reducers';
+// import constellations from './constellations/reducers';
 import core from './core/reducers';
-import galaxies from './galaxies/reducers';
-import universe from './universe/reducers';
+// import galaxies from './galaxies/reducers';
+// import universe from './universe/reducers';
 
 const appReducer = combineReducers({
-  constellations,
+  // constellations,
   core,
-  galaxies,
-  universe,
+  // galaxies,
+  // universe,
 });
 
 const rootReducer = (state, action) => {
