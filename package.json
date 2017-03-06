@@ -2,6 +2,10 @@
   "name": "G-0",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=6.9.0",
+    "npm": ">=3.10.0"
+  },
   "devDependencies": {
     "autoprefixer": "6.5.1",
     "babel-core": "6.17.0",
