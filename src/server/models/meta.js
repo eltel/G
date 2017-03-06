@@ -2,13 +2,11 @@
 
 import mongoose from 'mongoose';
 
-const metaSchema = new mongoose.Schema({
+export default {
   createdBy: {
     type: mongoose.Schema.Types.ObjectId,
   },
   createdOn: {
     type: Date,
   },
-});
-
-export default mongoose.model('Meta', metaSchema);
+};

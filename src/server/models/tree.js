@@ -9,10 +9,10 @@ const treeSchema = new mongoose.Schema({
     type: Meta,
   },
   cosntellations: {
-    type: {
+    type: [ {
       _id: mongoose.Schema.Types.ObjectId,
       name: String,
-    },
+    } ],
   },
   category: {
     type: [ String ],

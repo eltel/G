@@ -11,6 +11,9 @@ const galaxySchema = new mongoose.Schema({
   avatar: {
     type: Buffer,
   },
+  name: {
+    type: String,
+  },
   trees: {
     type: [ mongoose.Schema.Types.ObjectId ],
   },
@@ -24,13 +27,6 @@ const galaxySchema = new mongoose.Schema({
     type: [ {
       _id: mongoose.Schema.Types.ObjectId,
       name: String,
-    } ],
-  },
-  edges: {
-    type: [ {
-      _id: mongoose.Schema.Types.ObjectId,
-      fromId: mongoose.Schema.Types.ObjectId,
-      toId: mongoose.Schema.Types.ObjectId,
     } ],
   },
 });

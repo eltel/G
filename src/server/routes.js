@@ -11,6 +11,7 @@ export default function routes(app, db) {
   app.use('/graphql', graphqlHTTP(req => ({
     schema,
     pretty: true,
+    graphiql: true,
   })));
 
   // app.route('/api/signup')

@@ -12,6 +12,9 @@ const constellationSchema = new mongoose.Schema({
   // admin: {
   //   type: Admin,
   // },
+  name: {
+    type: String,
+  },
   editors: {
     type: [ mongoose.Schema.Types.ObjectId ],
   },
@@ -41,9 +44,18 @@ const constellationSchema = new mongoose.Schema({
   },
   edges: {
     type: [ {
-      _id: mongoose.Schema.Types.ObjectId,
-      fromId: mongoose.Schema.Types.ObjectId,
-      toId: mongoose.Schema.Types.ObjectId,
+      fromId: {
+        type: mongoose.Schema.Types.ObjectId,
+      },
+      toId: {
+        type: mongoose.Schema.Types.ObjectId,
+      },
+      description: {
+        type: String,
+      },
+      documentation: {
+        type: [ String ],
+      },
     } ],
   },
   trustRequired: {
