@@ -26,6 +26,9 @@ export default {
     ADD_TREE_REQUEST: function (action) {
 
     },
+    REMOVE_TREE_REQUEST: function (action) {
+
+    },
     ADD_EDITOR_REQUEST: function (action) {
 
     },
