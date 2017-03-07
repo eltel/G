@@ -21,8 +21,8 @@ export const listPublications = actionCreators(LIST_PUBLICATIONS);
 export const LIST_NODES = createRequestTypes('LIST_NODES');
 export const listNodes = actionCreators(LIST_NODES);
 
-export const LIST_METAVERSE = createRequestTypes('LIST_METAVERSE');
-export const listMetaverse = actionCreators(LIST_METAVERSE);
+export const LIST_TREES = createRequestTypes('LIST_TREES');
+export const listTrees = actionCreators(LIST_TREES);
 
 export const ADD_EDITOR = createRequestTypes('ADD_EDITOR');
 export const addEditor = actionCreators(ADD_EDITOR);
@@ -33,8 +33,8 @@ export const removeEditor = actionCreators(REMOVE_EDITOR);
 export const REMOVE_EDITOR_CONTENT = createRequestTypes('REMOVE_EDITOR_CONTENT');
 export const removeEditorContent = actionCreators(REMOVE_EDITOR_CONTENT);
 
-export const CREATE_NODE = createRequestTypes('CREATE_NODE');
-export const createNode = actionCreators(CREATE_NODE);
+export const ADD_NODE = createRequestTypes('ADD_NODE');
+export const addNode = actionCreators(ADD_NODE);
 
 export const EDIT_NODE = createRequestTypes('EDIT_NODE');
 export const editNode = actionCreators(EDIT_NODE);
@@ -42,8 +42,8 @@ export const editNode = actionCreators(EDIT_NODE);
 export const DELETE_NODE = createRequestTypes('DELETE_NODE');
 export const deleteNode = actionCreators(DELETE_NODE);
 
-export const CREATE_EDGE = createRequestTypes('CREATE_EDGE');
-export const createEdge = actionCreators(CREATE_EDGE);
+export const ADD_EDGE = createRequestTypes('ADD_EDGE');
+export const addEdge = actionCreators(ADD_EDGE);
 
 export const EDIT_EDGE = createRequestTypes('EDIT_EDGE');
 export const editEdge = actionCreators(EDIT_EDGE);
