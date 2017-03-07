@@ -23,6 +23,9 @@ export default {
     LIST_TREES_REQUEST: function (action) {
 
     },
+    ADD_TREE_REQUEST: function (action) {
+
+    },
     ADD_EDITOR_REQUEST: function (action) {
 
     },

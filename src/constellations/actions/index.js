@@ -24,6 +24,9 @@ export const listNodes = actionCreators(LIST_NODES);
 export const LIST_TREES = createRequestTypes('LIST_TREES');
 export const listTrees = actionCreators(LIST_TREES);
 
+export const ADD_TREE = createRequestTypes('ADD_TREE');
+export const addTree = actionCreators(ADD_TREE);
+
 export const ADD_EDITOR = createRequestTypes('ADD_EDITOR');
 export const addEditor = actionCreators(ADD_EDITOR);
 
