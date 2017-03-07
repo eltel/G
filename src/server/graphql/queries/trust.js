@@ -17,7 +17,7 @@ export default {
         type: new GraphQLNonNull(GraphQLString)
       }
     },
-    resolve(root, params, context, options) {
+    resolve(root, parroot, params, context, options) {
       return TrustModel
         .find({ fromId: params.user })
         .exec();
@@ -31,7 +31,7 @@ export default {
         type: new GraphQLNonNull(GraphQLString),
       },
     },
-    resolve(root, params, options) {
+    resolve(root, params, context, options) {
       return TrustModel
         .find({ toId: params.user })
         .exec();

@@ -19,7 +19,7 @@ export default {
         type: new GraphQLNonNull(GraphQLID),
       }
     },
-    resolve(root, params, context, options) {
+    resolve(root, parroot, params, context, options) {
       const projection = getProjection(options.fieldNodes[0]);
       return TreeModel
         .findById(params.id)
@@ -35,7 +35,7 @@ export default {
         type: new GraphQLNonNull(GraphQLString),
       },
     },
-    resolve(root, params, options) {
+    resolve(root, params, context, options) {
       const projection = getProjection(options.fieldNodes[0]);
       return TreeModel
         .find({ category: params.category })

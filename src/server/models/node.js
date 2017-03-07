@@ -22,7 +22,7 @@ const nodeSchema = new mongoose.Schema({
   },
   hypernode: {
     type: mongoose.Schema.Types.ObjectId,
-    required: true,
+    // required: true,
     index: true,
   },
   nodeType: {

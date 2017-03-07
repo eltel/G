@@ -19,6 +19,7 @@ export default {
       }
     },
     async resolve(root, params, context, options) {
+      console.log('BARG!');
       const nodeModel = new NodeModel(params.data);
       const newNode = await nodeModel.save();
 

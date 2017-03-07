@@ -19,6 +19,7 @@ export default {
       }
     },
     async resolve(root, params, context, options) {
+      console.log('BARG BARG!');
       const userModel = new UserModel(params.data);
       const newUser = await userModel.save();
 

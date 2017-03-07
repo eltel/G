@@ -19,7 +19,7 @@ export default {
         type: new GraphQLNonNull(GraphQLString),
       }
     },
-    resolve(root, params, context, options) {
+    resolve(root, parroot, params, context, options) {
       const projection = getProjection(options.fieldNodes[0]);
       return ConstellationModel
         .findOne({ name: params.name })
@@ -35,7 +35,7 @@ export default {
         type: new GraphQLList(GraphQLID)
       },
     },
-    resolve(root, params, options) {
+    resolve(root, params, context, options) {
       const projection = getProjection(options.fieldNodes[0]);
       return ConstellationModel
         .find({
@@ -50,7 +50,7 @@ export default {
   allConstellations: {
     type: new GraphQLList(constellationType),
     args: {},
-    resolve(root, params, options) {
+    resolve(root, params, context, options) {
       const projection = getProjection(options.fieldNodes[0]);
       return ConstellationModel
         .find()

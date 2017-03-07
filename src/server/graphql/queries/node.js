@@ -19,7 +19,7 @@ export default {
         type: new GraphQLNonNull(GraphQLID)
       }
     },
-    resolve(root, params, context, options) {
+    resolve(root, parroot, params, context, options) {
       const projection = getProjection(options.fieldNodes[0]);
       return NodeModel
         .findOne({ handle: params.handle })
@@ -35,7 +35,7 @@ export default {
         type: new GraphQLList(GraphQLID),
       }
     },
-    resolve(root, params, options) {
+    resolve(root, parroot, params, context, options) {
       const projection = getProjection(options.fieldNodes[0]);
 
       return NodeModel
@@ -56,7 +56,7 @@ export default {
         type: new GraphQLNonNull(GraphQLString),
       },
     },
-    resolve(root, params, options) {
+    resolve(root, parroot, params, context, options) {
       const projection = getProjection(options.fieldNodes[0]);
       return NodeModel
         .find({ name: params.name })
@@ -72,7 +72,7 @@ export default {
         type: new GraphQLNonNull(GraphQLID),
       },
     },
-    resolve(root, params, options) {
+    resolve(root, parroot, params, context, options) {
       const projection = getProjection(options.fieldNodes[0]);
       return NodeModel
         .find({ hypernode: params.hypernode })

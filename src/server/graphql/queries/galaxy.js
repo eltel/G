@@ -18,7 +18,7 @@ export default {
         type: new GraphQLNonNull(GraphQLString)
       }
     },
-    resolve(root, params, context, options) {
+    resolve(root, parroot, params, context, options) {
       const projection = getProjection(options.fieldNodes[0]);
       return GalaxyModel
         .findOne({ name: params.name })
@@ -29,7 +29,7 @@ export default {
   allGalaxies: {
     type: new GraphQLList(galaxyType),
     args: {},
-    resolve(root, params, options) {
+    resolve(root, params, context, options) {
       const projection = getProjection(options.fieldNodes[0]);
       return GalaxyModel
         .find()

@@ -3,7 +3,8 @@ import {
   GraphQLNonNull,
   GraphQLString,
   GraphQLBoolean,
-  GraphQLID
+  GraphQLEnumType,
+  GraphQLID,
 } from 'graphql';
 
 export default new GraphQLInputObjectType({
@@ -25,7 +26,17 @@ export default new GraphQLInputObjectType({
       type: GraphQLID,
     },
     nodeType: {
-      type: GraphQLString,
+      type: new GraphQLEnumType({
+        name: 'nodeType',
+        values: {
+          P: { value: 'P' },
+          E: { value: 'E' },
+          C: { value: 'C' },
+          T: { value: 'T' },
+          M: { value: 'M' },
+          I: { value: 'I' },
+        },
+      }),
     },
     name: {
       type: GraphQLString,

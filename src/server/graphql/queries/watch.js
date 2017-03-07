@@ -31,7 +31,7 @@ export default {
         type: new GraphQLNonNull(GraphQLString),
       },
     },
-    resolve(root, params, options) {
+    resolve(root, params, context, options) {
       return WatchModel
         .find({ toId: params.user })
         .exec();
