@@ -80,4 +80,15 @@ export default {
         .exec();
     },
   },
+  allNodes: {
+    type: new GraphQLList(nodeType),
+    args: {},
+    resolve(root, parroot, params, context, options) {
+      const projection = getProjection(options.fieldNodes[0]);
+      return NodeModel
+        .find()
+        .select(projection)
+        .exec();
+    },
+  },
 };

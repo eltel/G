@@ -14,7 +14,7 @@ export default {
   tree: {
     type: treeType,
     args: {
-      id: {
+      _id: {
         name: 'id',
         type: new GraphQLNonNull(GraphQLID),
       }
@@ -39,6 +39,17 @@ export default {
       const projection = getProjection(options.fieldNodes[0]);
       return TreeModel
         .find({ category: params.category })
+        .select(projection)
+        .exec();
+    }
+  },
+  allTrees: {
+    type: new GraphQLList(treeType),
+    args: {},
+    resolve(root, params, context, options) {
+      const projection = getProjection(options.fieldNodes[0]);
+      return TreeModel
+        .find()
         .select(projection)
         .exec();
     }

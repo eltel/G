@@ -27,7 +27,7 @@ export default {
         .exec();
     }
   },
-  constellationsInGalaxy: {
+  constellationsInList: {
     type: constellationType,
     args: {
       constellationIDs: {

@@ -9,6 +9,9 @@ Join the mailing list  getgee@lists.riseup.net if you are a developer and would 
 
 ##### Pull requests welcome.
 
+### Development documentation
+
+Notes on database schemas and GraphQL queries can be found in the file `graphql.md`.
 
 ### Setting Up
 

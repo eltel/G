@@ -26,7 +26,7 @@ export default {
         .exec();
     }
   },
-  users: {
+  allUsers: {
     type: new GraphQLList(userType),
     args: {},
     resolve(root, params, context, options) {
