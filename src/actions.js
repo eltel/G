@@ -3,6 +3,7 @@ import * as constellations from './constellations/actions';
 import * as galaxies from './galaxies/actions';
 import * as universe from './universe/actions';
 import * as metaverse from './metaverse/actions';
+import * as metaverse from './userprofiles/actions';
 
 export default {
     ...core,
@@ -10,4 +11,5 @@ export default {
     ...galaxies,
     ...universe,
     ...metaverse,
+    ...userprofiles,
 };
