@@ -27,6 +27,9 @@ export const listTrees = actionCreators(LIST_TREES);
 export const ADD_TREE = createRequestTypes('ADD_TREE');
 export const addTree = actionCreators(ADD_TREE);
 
+export const REMOVE_TREE = createRequestTypes('REMOVE_TREE');
+export const removeTree = actionCreators(REMOVE_TREE);
+
 export const ADD_EDITOR = createRequestTypes('ADD_EDITOR');
 export const addEditor = actionCreators(ADD_EDITOR);
 

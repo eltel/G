@@ -1,13 +1,13 @@
 import { createRequestTypes, actionCreators, action } from '../../actions';
 
-export const CREATE_METAVERSE = createRequestTypes('CREATE_METAVERSE');
-export const createMetaverse = actionCreators(CREATE_METAVERSE);
+export const CREATE_TREE = createRequestTypes('CREATE_TREE');
+export const createTree = actionCreators(CREATE_TREE);
 
-export const EDIT_METAVERSE = createRequestTypes('EDIT_METAVERSE');
-export const editMetaverse = actionCreators(EDIT_METAVERSE);
+export const EDIT_TREE = createRequestTypes('EDIT_TREE');
+export const editTree = actionCreators(EDIT_TREE);
 
-export const DELETE_METAVERSE = createRequestTypes('DELETE_METAVERSE');
-export const deleteMetaverse = actionCreators(DELETE_METAVERSE);
+export const DELETE_TREE = createRequestTypes('DELETE_TREE');
+export const deleteTree = actionCreators(DELETE_TREE);
 
-export const ATTACH_METAVERSE = createRequestTypes('ATTACH_METAVERSE');
-export const attachMetaverse = actionCreators(ATTACH_METAVERSE);
+export const LIST_TREE_CONSTELLATIONS = createRequestTypes('LIST_TREE_CONSTELLATIONS');
+export const listTreeConstellations = actionCreators(LIST_TREE_CONSTELLATIONS);
