@@ -18,7 +18,7 @@ export default {
         type: new GraphQLNonNull(GraphQLString)
       }
     },
-    resolve(root, params, context, options) {
+    resolve(root, parroot, params, context, options) {
       const projection = getProjection(options.fieldNodes[0]);
       return UserModel
         .findOne({ handle: params.handle })
@@ -26,10 +26,10 @@ export default {
         .exec();
     }
   },
-  users: {
+  allUsers: {
     type: new GraphQLList(userType),
     args: {},
-    resolve(root, params, options) {
+    resolve(root, params, context, options) {
       const projection = getProjection(options.fieldASTs[0]);
 
       return UserModel
