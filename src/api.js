@@ -5,6 +5,7 @@ import core from './core/queries';
 import galaxies from './galaxies/queries';
 import universe from './universe/queries';
 import metaverse from './metaverse/queries';
+import userprofiles from './userprofiles/queries';
 
 const apiUrl = process.env.NODE_ENV === 'production' ? 'http://getgee.herokuapp.com/graphql/' : 'http://localhost:3000/graphql/';
 
@@ -14,6 +15,7 @@ const queries = {
   ...galaxies,
   ...universe,
   ...metaverse,
+  ...userprofiles,
 };
 
 export default function postQuery(action, entity) {
