@@ -4,7 +4,7 @@ import routes from './routes';
 
 const app = express();
 
-mongoose.connect('mongodb://gee-dev:developer@ds031915.mlab.com:31915/heroku_8xfxv8j2');
+mongoose.connect('mongodb://getgeedev:development@ds121190.mlab.com:21190/heroku_0881rf5t');
 const db = mongoose.connection;
 
 app.use('/static', express.static(`${process.cwd()}/build/static`));
