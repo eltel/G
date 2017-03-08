@@ -3,6 +3,12 @@
   background-color: #f4f4f4;
 }
 
+.AppBar {
+    height: inherit;
+    width: 90%;
+    position: relative;
+    margin: .5em auto;
+}
 
 .App-header {
   background-color: #f4f4f4;
@@ -66,34 +72,43 @@ input#searchInput {
 }
 
 /*** NAVIGATION ***/
-.AppBar {
-    height: inherit;
-    max-width: 90%;
-    position: relative;
-    margin: .5em auto;
+.nav {
+  display: flex;
+  justify-content: space-between;
 }
 
-span button {
- border: none;
+.nav-left {
+  width: 20%;
+  min-width: 130px;
+}
+.nav-right {
+  width: 10%;
+  margin-left: auto;
+  min-width: 130px;
+}
+
+.nav button {
+  border: none;
 	background: transparent;
-	    margin-right: 1em;
-
+	margin-right: 1em;
+  display: inline-block;
+  width: 45px;
 }
 
-span button img {
-//	width: 1px;
+.nav button img {
 		height: 35px;
 		text-align: left;
-	margin~right: 5em !important;
-	cursor: pointer;
-}
-
-#help, #user {
-	float: right;
+	  margin-right: 5em !important;
+	  cursor: pointer;
 }
 
 /* Navigation Search */
-input[type=search] {
+.nav-search {
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+}
+.nav-search input[type=search] {
 	width: 15px;
 	padding-left: 10px;
 	color: transparent;
@@ -110,10 +125,10 @@ input[type=search] {
 	-moz-transition: all .5s;
 	transition: all .5s;
 }
-input[type=search]:hover {
+.nav-search input[type=search]:hover {
 	background-color: #fff;
 }
-input[type=search]:focus {
+.nav-search input[type=search]:focus {
 	width: 130px;
 	padding-left: 32px;
 	color: #000;
@@ -123,16 +138,17 @@ input[type=search]:focus {
   -webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
 -moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
 box-shadow: 0 0 5px rgba(109,207,246,.5);
+outline: 0;
 }
-input:-moz-placeholder {
+.nav-search input:-moz-placeholder {
 	color: transparent;
 }
-input::-webkit-input-placeholder {
+.nav-search input::-webkit-input-placeholder {
 	color: transparent;
 }
-input:-moz-placeholder {
+.nav-search input:-moz-placeholder {
 	color: #999;
 }
-input::-webkit-input-placeholder {
+.nav-search input::-webkit-input-placeholder {
 	color: #999;
 }

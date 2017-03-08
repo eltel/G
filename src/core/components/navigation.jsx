@@ -56,11 +56,17 @@ class Navigation extends React.Component {
   render() {
     const {origin} = this.props;
     return (
-      <div>
-				<span><button id="home" name="home" value="home" onClick='window.location="http://localhost:3000/"'><img src={logo} /></button></span>
-        <input type="search" placeholder="Search" />
-				<span><button id="help" name="help" value="help" onClick='window.location="http://localhost:3000/"'><img src={help} /></button></span>
-				<span><button id="user" name="user" value="user" onClick='window.location="http://localhost:3000/"'><img src={user} /></button></span>
+      <div className="nav">
+        <div className="nav-left">
+				    <button id="home" name="home" value="home" onClick='window.location="http://localhost:3000/"'><img src={logo} /></button>
+            <div className="nav-search">
+              <input type="search" placeholder="Search" />
+            </div>
+        </div>
+        <div className="nav-right">
+				    <button id="help" name="help" value="help" onClick='window.location="http://localhost:3000/"'><img src={help} /></button>
+				    <button id="user" name="user" value="user" onClick='window.location="http://localhost:3000/"'><img src={user} /></button>
+        </div>
 
 <LogInButtonsDialog />
       </div>
