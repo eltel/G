@@ -33,7 +33,7 @@ class App extends Component {
               <p> Search for people, events, organizations, things or ideas.</p>
 
                            <div id="core" className="core">
-								
+
 						        <Core/>
 			</div>
 			</div>
