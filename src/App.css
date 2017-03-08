@@ -16,13 +16,6 @@
 
 }
 
-.AppBar {
-    height: inherit;
-    max-width: 90%;
-    position: relative;
-    margin: .5em auto;
-}
-
 .App-intro {
   font-size: large;
   text-align: center;
@@ -30,8 +23,6 @@
   padding: 0px;
 
 }
-
-
 
 .container {
 font-family: sans-serif;
@@ -43,10 +34,7 @@ width: auto;
 background-color: white;
 padding: 189px;
 color: grey;
-
-
 }
-
 
 .search {
 font-size: large;
@@ -60,9 +48,6 @@ background-color: white;
 padding-top: 1em;
 padding-bottom: 1.75em;
 color: black;
-
-
-
 }
 
 .search form {
@@ -78,6 +63,14 @@ input#searchInput {
 
 #search>input[name="search"], #search>input[name="create"] {
     display: none;
+}
+
+/*** NAVIGATION ***/
+.AppBar {
+    height: inherit;
+    max-width: 90%;
+    position: relative;
+    margin: .5em auto;
 }
 
 span button {
@@ -97,4 +90,49 @@ span button img {
 
 #help, #user {
 	float: right;
+}
+
+/* Navigation Search */
+input[type=search] {
+	width: 15px;
+	padding-left: 10px;
+	color: transparent;
+	cursor: pointer;
+	background: #ededed url(http://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+	border: solid 1px #ccc;
+	padding: 9px 10px 9px 32px;
+
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+input[type=search]:hover {
+	background-color: #fff;
+}
+input[type=search]:focus {
+	width: 130px;
+	padding-left: 32px;
+	color: #000;
+  background-color: #fff;
+	border-color: #66CC75;
+	cursor: auto;
+  -webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+input:-moz-placeholder {
+	color: transparent;
+}
+input::-webkit-input-placeholder {
+	color: transparent;
+}
+input:-moz-placeholder {
+	color: #999;
+}
+input::-webkit-input-placeholder {
+	color: #999;
 }

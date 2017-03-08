@@ -58,10 +58,10 @@ class Navigation extends React.Component {
     return (
       <div>
 				<span><button id="home" name="home" value="home" onClick='window.location="http://localhost:3000/"'><img src={logo} /></button></span>
-				<span><button id="search" name="search" value="search" onClick={this.newOrigin.bind(this)}><img src={search} /></button></span>
+        <input type="search" placeholder="Search" />
 				<span><button id="help" name="help" value="help" onClick='window.location="http://localhost:3000/"'><img src={help} /></button></span>
 				<span><button id="user" name="user" value="user" onClick='window.location="http://localhost:3000/"'><img src={user} /></button></span>
-         
+
 <LogInButtonsDialog />
       </div>
     );
@@ -84,4 +84,3 @@ export default Navigation;
 
 // Menu icon should only appear when viewing a single item
 // LeftNav should contain all the admin data for current item displayed
-
