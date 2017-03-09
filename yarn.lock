@@ -229,7 +229,7 @@ babel-code-frame@^6.11.0, babel-code-frame@^6.16.0, babel-code-frame@^6.22.0:
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
-babel-core@6.17.0, babel-core@^6.0.0:
+babel-core@6.17.0:
   version "6.17.0"
   resolved "https://registry.yarnpkg.com/babel-core/-/babel-core-6.17.0.tgz#6c4576447df479e241e58c807e4bc7da4db7f425"
   dependencies:
@@ -255,7 +255,7 @@ babel-core@6.17.0, babel-core@^6.0.0:
     slash "^1.0.0"
     source-map "^0.5.0"
 
-babel-core@^6.23.0:
+babel-core@^6.0.0, babel-core@^6.23.0:
   version "6.23.1"
   resolved "https://registry.yarnpkg.com/babel-core/-/babel-core-6.23.1.tgz#c143cb621bb2f621710c220c5d579d15b8a442df"
   dependencies:
@@ -4698,6 +4698,10 @@ reduce-function-call@^1.0.1:
   resolved "https://registry.yarnpkg.com/reduce-function-call/-/reduce-function-call-1.0.2.tgz#5a200bf92e0e37751752fe45b0ab330fd4b6be99"
   dependencies:
     balanced-match "^0.4.2"
+
+redux-saga@^0.14.3:
+  version "0.14.3"
+  resolved "https://registry.yarnpkg.com/redux-saga/-/redux-saga-0.14.3.tgz#28cd2c5b49cf780a1de25875765724150c630513"
 
 redux@^3.6.0:
   version "3.6.0"

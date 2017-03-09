@@ -36,6 +36,7 @@ class App extends Component {
         			</div>
       			</div>
   			</div>
+      
 			<div className="body">
   	 		<p> copyright © 2017 Nayelo </p>
 			</div>
