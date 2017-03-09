@@ -14,10 +14,10 @@ export default {
     LIST_CONSTELLATIONS_REQUEST: function (action) {
 
     },
-    ADD_CONSTELLATIONS_REQUEST: function (action) {
+    ADD_CONSTELLATION_REQUEST: function (action) {
 
     },
-    DELETE_CONSTELLATIONS_REQUEST: function (action) {
+    REMOVE_CONSTELLATION_REQUEST: function (action) {
 
     },
     EDIT_FILTER_REQUEST: function (action) {

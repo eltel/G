@@ -28,6 +28,7 @@ const apiMap = [
   'listNodes',
   'listTrees',
   'addTree',
+  'removeTree',
   'addEditor',
   'removeEditor',
   'removeEditorContent',
@@ -42,8 +43,8 @@ const apiMap = [
   'editGalaxy',
   'deleteGalaxy',
   'listConstellations',
-  'addConstellations',
-  'deleteConstellations',
+  'addConstellation',
+  'removeConstellation',
   'editFlter',
   'fetchHypernode',
   'listHypernodeConstellations',
@@ -51,6 +52,10 @@ const apiMap = [
   'editReality',
   'deleteReality',
   'attachRealities',
+  'createTree',
+  'editTree',
+  'deleteTree',
+  'listTreeConstellations',
 ];
 
 function* fetchEntitySaga(entity, action) {

@@ -28,7 +28,7 @@ export default {
       return true;
     }
   },
-  removeGalaxy: {
+  deleteGalaxy: {
     type: galaxyType,
     args: {
       _id: {
@@ -38,17 +38,17 @@ export default {
     },
     async resolve(root, params, context, options) {
       const projection = getProjection(options.fieldNodes[0]);
-      const removedGalaxy = await GalaxyModel
+      const deletedGalaxy = await GalaxyModel
         .findByIdAndRemove(params._id, {
           select: projection
         })
         .exec();
 
-      if (!removedGalaxy) {
-        throw new Error('Error removing galaxy');
+      if (!deletedGalaxy) {
+        throw new Error('Error deleting galaxy');
       }
 
-      return removedGalaxy;
+      return deletedGalaxy;
     }
   },
 };

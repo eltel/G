@@ -16,11 +16,11 @@ export const deleteGalaxy = actionCreators(DELETE_GALAXY);
 export const LIST_CONSTELLATIONS = createRequestTypes('LIST_CONSTELLATIONS');
 export const listConstellations = actionCreators(LIST_CONSTELLATIONS);
 
-export const ADD_CONSTELLATIONS = createRequestTypes('ADD_CONSTELLATIONS');
-export const addConstellations = actionCreators(ADD_CONSTELLATIONS);
+export const ADD_CONSTELLATION = createRequestTypes('ADD_CONSTELLATION');
+export const addConstellation = actionCreators(ADD_CONSTELLATION);
 
-export const DELETE_CONSTELLATIONS = createRequestTypes('DELETE_CONSTELLATIONS');
-export const deleteConstellations = actionCreators(DELETE_CONSTELLATIONS);
+export const REMOVE_CONSTELLATION = createRequestTypes('REMOVE_CONSTELLATIONS');
+export const removeConstellation = actionCreators(REMOVE_CONSTELLATION);
 
 export const EDIT_FILTER = createRequestTypes('EDIT_FILTER');
 export const editFlter = actionCreators(EDIT_FILTER);
