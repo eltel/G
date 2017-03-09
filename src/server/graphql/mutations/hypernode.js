@@ -9,7 +9,7 @@ import hypernodeType from '../types/hypernode';
 import HypernodeModel from '../../models/reality';
 
 export default {
-  addHypernode: {
+  createHypernode: {
     type: GraphQLBoolean,
     args: {},
     async resolve(root, params, context, options) {
@@ -17,7 +17,7 @@ export default {
       const newHypernode = await hypernodeModel.save();
 
       if (!newHypernode) {
-        throw new Error('Error adding new hypernode');
+        throw new Error('Error creating new hypernode');
       }
       return true;
     }

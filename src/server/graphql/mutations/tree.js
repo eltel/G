@@ -10,7 +10,7 @@ import getProjection from '../get-projection';
 import TreeModel from '../../models/tree';
 
 export default {
-  addTree: {
+  createTree: {
     type: GraphQLBoolean,
     args: {
       data: {
@@ -23,7 +23,7 @@ export default {
       const newTree = await treeModel.save();
 
       if (!newTree) {
-        throw new Error('Error adding new tree');
+        throw new Error('Error creating new tree');
       }
       return true;
     }

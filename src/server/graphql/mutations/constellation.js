@@ -10,7 +10,7 @@ import getProjection from '../get-projection';
 import ConstellationModel from '../../models/constellation';
 
 export default {
-  addConstellation: {
+  createConstellation: {
     type: GraphQLBoolean,
     args: {
       data: {
@@ -23,7 +23,7 @@ export default {
       const newConstellation = await constellationModel.save();
 
       if (!newConstellation) {
-        throw new Error('Error adding new constellation');
+        throw new Error('Error creating new constellation');
       }
       return true;
     }

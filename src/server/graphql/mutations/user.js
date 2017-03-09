@@ -10,7 +10,7 @@ import getProjection from '../get-projection';
 import UserModel from '../../models/user';
 
 export default {
-  addUser: {
+  createUser: {
     type: GraphQLBoolean,
     args: {
       data: {
@@ -24,7 +24,7 @@ export default {
       const newUser = await userModel.save();
 
       if (!newUser) {
-        throw new Error('Error adding new user');
+        throw new Error('Error creating new user');
       }
       return true;
     }

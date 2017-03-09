@@ -10,7 +10,7 @@ import getProjection from '../get-projection';
 import GalaxyModel from '../../models/galaxy';
 
 export default {
-  addGalaxy: {
+  createGalaxy: {
     type: GraphQLBoolean,
     args: {
       data: {
@@ -23,7 +23,7 @@ export default {
       const newGalaxy = await galaxyModel.save();
 
       if (!newGalaxy) {
-        throw new Error('Error adding new galaxy');
+        throw new Error('Error creating new galaxy');
       }
       return true;
     }
