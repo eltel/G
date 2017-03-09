@@ -6,7 +6,7 @@ import {
 
 import hypernodeInputType from '../types/hypernode-input';
 import hypernodeType from '../types/hypernode';
-import HypernodeModel from '../../models/node';
+import HypernodeModel from '../../models/reality';
 
 export default {
   addHypernode: {
@@ -17,7 +17,7 @@ export default {
       const newHypernode = await hypernodeModel.save();
 
       if (!newHypernode) {
-        throw new Error('Error adding new node');
+        throw new Error('Error adding new hypernode');
       }
       return true;
     }

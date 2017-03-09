@@ -5,7 +5,7 @@ import trust from './trust';
 import support from './support';
 import watch from './watch';
 import tree from './tree';
-import node from './node';
+import reality from './reality';
 import user from './user';
 
 export default {
@@ -16,6 +16,6 @@ export default {
   ...support,
   ...watch,
   ...tree,
-  ...node,
+  ...reality,
   ...user,
 };

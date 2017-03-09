@@ -6,13 +6,13 @@ import {
 } from 'graphql';
 import { Types } from 'mongoose';
 
-import nodeType from '../types/node';
+import realityType from '../types/reality';
 import getProjection from '../get-projection';
-import NodeModel from '../../models/node';
+import RealityModel from '../../models/reality';
 
 export default {
-  node: {
-    type: nodeType,
+  reality: {
+    type: realityType,
     args: {
       _id: {
         name: '_id',
@@ -21,35 +21,35 @@ export default {
     },
     resolve(root, parroot, params, context, options) {
       const projection = getProjection(options.fieldNodes[0]);
-      return NodeModel
+      return RealityModel
         .findOne({ handle: params.handle })
         .select(projection)
         .exec();
     }
   },
-  nodesInList: {
-    type: new GraphQLList(nodeType),
+  realitiesInList: {
+    type: new GraphQLList(realityType),
     args: {
-      nodeIDs: {
-        name: 'nodeIDs',
+      realityIDs: {
+        name: 'realityIDs',
         type: new GraphQLList(GraphQLID),
       }
     },
     resolve(root, parroot, params, context, options) {
       const projection = getProjection(options.fieldNodes[0]);
 
-      return NodeModel
+      return RealityModel
         .find({
           _id: {
-            $in: params.nodeIDs,
+            $in: params.realityIDs,
           },
         })
         .select(projection)
         .exec();
     }
   },
-  nodesByName: {
-    type: new GraphQLList(nodeType),
+  realitiesByName: {
+    type: new GraphQLList(realityType),
     args: {
       name: {
         name: 'name',
@@ -58,14 +58,14 @@ export default {
     },
     resolve(root, parroot, params, context, options) {
       const projection = getProjection(options.fieldNodes[0]);
-      return NodeModel
+      return RealityModel
         .find({ name: params.name })
         .select(projection)
         .exec();
     },
   },
-  nodesInHypernode: {
-    type: new GraphQLList(nodeType),
+  realitiesInHypernode: {
+    type: new GraphQLList(realityType),
     args: {
       hypernode: {
         name: 'hypernode',
@@ -74,18 +74,18 @@ export default {
     },
     resolve(root, parroot, params, context, options) {
       const projection = getProjection(options.fieldNodes[0]);
-      return NodeModel
+      return RealityModel
         .find({ hypernode: params.hypernode })
         .select(projection)
         .exec();
     },
   },
-  allNodes: {
-    type: new GraphQLList(nodeType),
+  allRealities: {
+    type: new GraphQLList(realityType),
     args: {},
     resolve(root, parroot, params, context, options) {
       const projection = getProjection(options.fieldNodes[0]);
-      return NodeModel
+      return RealityModel
         .find()
         .select(projection)
         .exec();

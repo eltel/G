@@ -11,7 +11,7 @@ Join the mailing list  getgee@lists.riseup.net if you are a developer and would 
 
 ### Development documentation
 
-Notes on database schemas and GraphQL queries can be found in the file `graphql.md`.
+Overview and development notes can be found in the file `docs` folder.
 
 ### Setting Up
 

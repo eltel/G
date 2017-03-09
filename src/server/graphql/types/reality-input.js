@@ -8,7 +8,7 @@ import {
 } from 'graphql';
 
 export default new GraphQLInputObjectType({
-  name: 'NodeInput',
+  name: 'RealityInput',
   fields: {
     _id: {
       type: GraphQLID,
