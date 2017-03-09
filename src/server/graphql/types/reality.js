@@ -7,7 +7,7 @@ import {
 } from 'graphql';
 
 export default new GraphQLObjectType({
-  name: 'Node',
+  name: 'Reality',
   fields: {
     _id: {
       type: GraphQLID,

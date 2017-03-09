@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 
 import Meta from './meta';
 
-const nodeSchema = new mongoose.Schema({
+const realitySchema = new mongoose.Schema({
   meta: {
     type: Meta,
   },
@@ -50,4 +50,4 @@ const nodeSchema = new mongoose.Schema({
   },
 });
 
-export default mongoose.model('Node', nodeSchema);
+export default mongoose.model('Reality', realitySchema);

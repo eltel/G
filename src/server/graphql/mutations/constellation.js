@@ -28,7 +28,7 @@ export default {
       return true;
     }
   },
-  removeConstellation: {
+  deleteConstellation: {
     type: constellationType,
     args: {
       _id: {
@@ -38,17 +38,17 @@ export default {
     },
     async resolve(root, params, context, options) {
       const projection = getProjection(options.fieldNodes[0]);
-      const removedConstellation = await ConstellationModel
+      const deletedConstellation = await ConstellationModel
         .findByIdAndRemove(params._id, {
           select: projection
         })
         .exec();
 
-      if (!removedConstellation) {
-        throw new Error('Error removing constellation');
+      if (!deletedConstellation) {
+        throw new Error('Error deleting constellation');
       }
 
-      return removedConstellation;
+      return deletedConstellation;
     }
   },
 };

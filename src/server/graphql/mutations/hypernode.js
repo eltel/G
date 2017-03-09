@@ -6,7 +6,7 @@ import {
 
 import hypernodeInputType from '../types/hypernode-input';
 import hypernodeType from '../types/hypernode';
-import HypernodeModel from '../../models/node';
+import HypernodeModel from '../../models/reality';
 
 export default {
   addHypernode: {
@@ -17,12 +17,12 @@ export default {
       const newHypernode = await hypernodeModel.save();
 
       if (!newHypernode) {
-        throw new Error('Error adding new node');
+        throw new Error('Error adding new hypernode');
       }
       return true;
     }
   },
-  removeHypernode: {
+  deleteHypernode: {
     type: hypernodeType,
     args: {
       _id: {
@@ -31,15 +31,15 @@ export default {
       }
     },
     async resolve(root, params, context, options) {
-      const removedHypernode = await HypernodeModel
+      const deletedHypernode = await HypernodeModel
         .findByIdAndRemove(params._id)
         .exec();
 
-      if (!removedHypernode) {
-        throw new Error('Error removing hypernode');
+      if (!deletedHypernode) {
+        throw new Error('Error deleting hypernode');
       }
 
-      return removedHypernode;
+      return deletedHypernode;
     }
   },
 };

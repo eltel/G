@@ -4,33 +4,33 @@ import {
   GraphQLID,
 } from 'graphql';
 
-import nodeInputType from '../types/node-input';
-import nodeType from '../types/node';
+import realityInputType from '../types/reality-input';
+import realityType from '../types/reality';
 import getProjection from '../get-projection';
-import NodeModel from '../../models/node';
+import RealityModel from '../../models/reality';
 
 export default {
-  addNode: {
+  addReality: {
     type: GraphQLBoolean,
     args: {
       data: {
         name: 'data',
-        type: new GraphQLNonNull(nodeInputType)
+        type: new GraphQLNonNull(realityInputType)
       }
     },
     async resolve(root, params, context, options) {
       console.log('BARG!');
-      const nodeModel = new NodeModel(params.data);
-      const newNode = await nodeModel.save();
+      const realityModel = new RealityModel(params.data);
+      const newReality = await realityModel.save();
 
-      if (!newNode) {
-        throw new Error('Error adding new node');
+      if (!newReality) {
+        throw new Error('Error adding new reality');
       }
       return true;
     }
   },
-  removeNode: {
-    type: nodeType,
+  deleteReality: {
+    type: realityType,
     args: {
       _id: {
         name: '_id',
@@ -39,17 +39,17 @@ export default {
     },
     async resolve(root, params, context, options) {
       const projection = getProjection(options.fieldNodes[0]);
-      const removedNode = await NodeModel
+      const deletedReality = await RealityModel
         .findByIdAndRemove(params._id, {
           select: projection
         })
         .exec();
 
-      if (!removedNode) {
-        throw new Error('Error removing node');
+      if (!deletedReality) {
+        throw new Error('Error deleting reality');
       }
 
-      return removedNode;
+      return deletedReality;
     }
   },
 };

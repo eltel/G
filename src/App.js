@@ -24,24 +24,23 @@ class App extends Component {
       <div className="App">
           <div className="App-header">
              <div className="AppBar">
-			<Navigation />
+          			<Navigation />
               </div>
           </div>
 
         <div className="App-intro">
            <div className="container">
               <p> Search for people, events, organizations, things or ideas.</p>
-
-                           <div id="core" className="core">
-
-						        <Core/>
-			</div>
-			</div>
-			</div>
+              <div id="core" className="core">								
+				        <Core/>
+        			</div>
+      			</div>
+  			</div>
+      
 			<div className="body">
-			<p> copyright © 2017 Nayelo </p>
+  	 		<p> copyright © 2017 Nayelo </p>
 			</div>
-			</div>
+		</div>
 		);
   }
 }

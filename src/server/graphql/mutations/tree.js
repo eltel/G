@@ -28,7 +28,7 @@ export default {
       return true;
     }
   },
-  removeTree: {
+  deleteTree: {
     type: treeType,
     args: {
       _id: {
@@ -38,17 +38,17 @@ export default {
     },
     async resolve(root, params, context, options) {
       const projection = getProjection(options.fieldNodes[0]);
-      const removedTree = await TreeModel
+      const deletedTree = await TreeModel
         .findByIdAndRemove(params._id, {
           select: projection
         })
         .exec();
 
-      if (!removedTree) {
-        throw new Error('Error removing tree');
+      if (!deletedTree) {
+        throw new Error('Error deleting tree');
       }
 
-      return removedTree;
+      return deletedTree;
     }
   },
 };

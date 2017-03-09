@@ -59,9 +59,18 @@ Available query and mutation types can be found in the folders `src/server/graph
 * `deleteTree`
 * `deleteHypernode`
 * `deleteUser`
-* `deleteSupport`
-* `deleteTrust`
-* `deleteWatch`
+* `removeSupport`
+* `removeTrust`
+* `removeWatch`
 
 #### No update mutations have been coded yet.
 
+
+#### Naming notes
+
+Add and Remove attach links by _id (ie add or remove a reference to a reality within a constellation).
+Create and Delete add and remove the entire record (ie add or remove the reality from Universe).
+
+The five places you can be are in the client side folder names. Sometimes things reappear in other places, ie realities appear in constellations (as nodes) and constellations appear in galaxies and trees live in metaverse but are linked in constellations and galaxies. Add and Remove are used for the links. Create and Delete can only be done from the folders where those entities live.
+
+Within Constellations references to realities appear as `nodes` but within Universe they are separated into `hypernodes` and `realities`.
