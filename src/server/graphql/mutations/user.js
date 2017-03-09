@@ -29,7 +29,7 @@ export default {
       return true;
     }
   },
-  removeUser: {
+  deleteUser: {
     type: userType,
     args: {
       _id: {
@@ -39,17 +39,17 @@ export default {
     },
     async resolve(root, params, context, options) {
       const projection = getProjection(options.fieldNodes[0]);
-      const removedUser = await UserModel
+      const deletedUser = await UserModel
         .findByIdAndRemove(params._id, {
           select: projection
         })
         .exec();
 
-      if (!removedUser) {
-        throw new Error('Error removing blog post');
+      if (!deletedUser) {
+        throw new Error('Error deleting blog post');
       }
 
-      return removedUser;
+      return deletedUser;
     }
   },
 };

@@ -22,7 +22,7 @@ export default {
       return true;
     }
   },
-  removeHypernode: {
+  deleteHypernode: {
     type: hypernodeType,
     args: {
       _id: {
@@ -31,15 +31,15 @@ export default {
       }
     },
     async resolve(root, params, context, options) {
-      const removedHypernode = await HypernodeModel
+      const deletedHypernode = await HypernodeModel
         .findByIdAndRemove(params._id)
         .exec();
 
-      if (!removedHypernode) {
-        throw new Error('Error removing hypernode');
+      if (!deletedHypernode) {
+        throw new Error('Error deleting hypernode');
       }
 
-      return removedHypernode;
+      return deletedHypernode;
     }
   },
 };

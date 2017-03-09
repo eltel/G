@@ -29,7 +29,7 @@ export default {
       return true;
     }
   },
-  removeNode: {
+  deleteNode: {
     type: nodeType,
     args: {
       _id: {
@@ -39,17 +39,17 @@ export default {
     },
     async resolve(root, params, context, options) {
       const projection = getProjection(options.fieldNodes[0]);
-      const removedNode = await NodeModel
+      const deletedNode = await NodeModel
         .findByIdAndRemove(params._id, {
           select: projection
         })
         .exec();
 
-      if (!removedNode) {
-        throw new Error('Error removing node');
+      if (!deletedNode) {
+        throw new Error('Error deleting node');
       }
 
-      return removedNode;
+      return deletedNode;
     }
   },
 };
