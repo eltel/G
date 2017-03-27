@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import logo from './core/components/buttons/svg/logo.svg';
 import add from './core/components/buttons/svg/add.svg';
 import Navigation from './core/components/navigation.jsx';
