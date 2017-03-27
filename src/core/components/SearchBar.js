@@ -27,7 +27,7 @@ class SearchBar extends Component {
 	render() {
     return (
       <div>
-        <Title origin={this.props.origin} direction={this.props.direction}></Title>
+        <Title direction={this.props.direction}></Title>
         <form>
           <input
             id="searchInput"
