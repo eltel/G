@@ -32,11 +32,20 @@ class SearchBar extends Component {
           <input
             id="searchInput"
             type="text"
-            placeholder="Search..."
+            placeholder=""
             value={this.state.searchInput}
             onChange={this.handleTextChange}
           />
           <p>
+            <label>
+              <input
+                type = "radio"
+                name="searchType"
+                value="universe"
+                onClick={this.handleRadioChange}
+                onChange={this.handleRadioChange}
+                checked={this.state.searchType === 'universe'}/>Universe
+            </label>
             <label>
               <input
                 type = "radio"
@@ -54,15 +63,6 @@ class SearchBar extends Component {
                 onClick={this.handleRadioChange}
 			          onChange={this.handleRadioChange}
                 checked={this.state.searchType === 'galaxy'}/>Galaxies
-            </label>
-            <label>
-              <input
-                type = "radio"
-                name="searchType"
-                value="universe"
-								onClick={this.handleRadioChange}
-			          onChange={this.handleRadioChange}
-                checked={this.state.searchType === 'universe'}/>Universe
             </label>
           </p>
         </form>

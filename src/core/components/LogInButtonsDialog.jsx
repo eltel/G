@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import user from '../components/buttons/svg/user.svg';
+import user from '../components/buttons/svg/user.svg';
 
 
 
