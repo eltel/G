@@ -1,18 +1,10 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import logo from './core/components/buttons/svg/logo.svg';
-import add from './core/components/buttons/svg/add.svg';
 import Navigation from './core/components/navigation.jsx';
-import search from './core/components/buttons/svg/search.svg';
-import help from './core/components/buttons/svg/help.svg';
-import user from './core/components/buttons/svg/user.svg';
+import Core from './core/components/core.jsx';
 import './core/components/buttons/btn.css';
 import './App.css';
 import './index.css';
-import SearchBar from './core/components/SearchBar.js';
-import Title from './core/components/title.jsx';
-import Core from './core/components/core.jsx';
-
 
 
 class App extends Component {
@@ -27,7 +19,6 @@ class App extends Component {
 
         <div className="App-intro">
            <div className="container">
-              <p> Search for people, events, organizations, things or ideas.</p>
               <div id="core" className="core">								
 				        <Core/>
         			</div>
