@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 var headings = {
-	'searchuniverse': 'Search for people, events, organizations, things or ideas.',
-	'searchconstellation': 'Search for the name of a constellation.',
-	'searchgalaxy': 'Search for the name of a galaxy.'
+	universe: 'Search for people, events, organizations, things or ideas.',
+	constellation: 'Search for the name of a constellation.',
+	galaxy: 'Search for the name of a galaxy.'
 };
 
 class Title extends React.Component {
