@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 
 // import constellations from './constellations/reducers';
+// import graph from './constellations/graph/reducers';
 import core from './core/reducers';
 // import galaxies from './galaxies/reducers';
 // import universe from './universe/reducers';
@@ -9,6 +10,7 @@ import core from './core/reducers';
 
 const appReducer = combineReducers({
   // constellations,
+  // graph,
   core,
   // galaxies,
   // universe,
