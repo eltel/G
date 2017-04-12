@@ -1,4 +1,4 @@
-import { createRequestTypes, actionCreators, action } from '../../actions';
+import { createRequestTypes, actionCreators, action } from '../../actionCreators';
 
 export const SET_SNACKBAR = 'SET_SNACKBAR';
 export const setSnackbar = (toast) => action(SET_SNACKBAR, { toast });

@@ -6,62 +6,33 @@ import {
 } from 'graphql';
 import { Types } from 'mongoose';
 
-import realityType from '../types/reality';
+import hypernodeType from '../types/hypernode';
 import getProjection from '../get-projection';
+import HypernodeModel from '../../models/hypernode';
 import RealityModel from '../../models/reality';
 
 export default {
-  reality: {
-    type: realityType,
+  hypernode: {
+    type: hypernodeType,
     args: {
-      _id: {
-        name: '_id',
+      id: {
+        name: 'id',
         type: new GraphQLNonNull(GraphQLID)
       }
     },
-    resolve(root, parroot, params, context, options) {
-      const projection = getProjection(options.fieldNodes[0]);
-      return RealityModel
-        .findOne({ handle: params.handle })
-        .select(projection)
-        .exec();
+    resolve(root, params, context, options) {
+      var hypernode = {};
+      return HypernodeModel
+        .findById(params.id)
+        .exec()
+        .then((foundHypernode) => {
+          hypernode = foundHypernode.toObject();
+          return RealityModel.find({ hypernode: hypernode._id })
+          .exec();
+        }).then((realities) => {
+          hypernode.realities = realities;
+          return hypernode;
+        });
     }
   },
-  realitiesInList: {
-    type: new GraphQLList(realityType),
-    args: {
-      realityIDs: {
-        name: 'realityIDs',
-        type: new GraphQLList(GraphQLID),
-      }
-    },
-    resolve(root, params, context, options) {
-      const projection = getProjection(options.fieldNodes[0]);
-
-      return RealityModel
-        .find({
-          _id: {
-            $in: params.realityIDs,
-          },
-        })
-        .select(projection)
-        .exec();
-    }
-  },
-  RealitiesByName: {
-    type: new GraphQLList(realityType),
-    args: {
-      name: {
-        name: 'name',
-        type: new GraphQLNonNull(GraphQLString),
-      },
-    },
-    resolve(root, params, context, options) {
-      const projection = getProjection(options.fieldNodes[0]);
-      return RealityModel
-        .find({ name: params.name })
-        .select(projection)
-        .exec();
-    }
-  }
 };

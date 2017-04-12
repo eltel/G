@@ -6,11 +6,16 @@ import {
   GraphQLID
 } from 'graphql';
 
+import { MetaInput } from './subdocuments';
+
 export default new GraphQLInputObjectType({
   name: 'UserInput',
   fields: {
     _id: {
       type: GraphQLID,
+    },
+    meta: {
+      type: MetaInput,
     },
     handle: {
       type: new GraphQLNonNull(GraphQLString),

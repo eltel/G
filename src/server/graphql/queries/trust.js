@@ -17,7 +17,7 @@ export default {
         type: new GraphQLNonNull(GraphQLString)
       }
     },
-    resolve(root, parroot, params, context, options) {
+    resolve(root, params, context, options) {
       return TrustModel
         .find({ fromId: params.user })
         .exec();

@@ -28,20 +28,34 @@ export default {
       return true;
     }
   },
+  editGalaxy: {
+    type: GraphQLBoolean,
+    args: {
+      id: {
+        name: 'id',
+        type: new GraphQLNonNull(GraphQLID),
+      },
+      data: {
+        name: 'data',
+        type: new GraphQLNonNull(galaxyInputType),
+      },
+    },
+    async resolve(root, params, context, options) {
+      return GalaxyModel.update({ _id: params.id }, params.data)
+        .exec();
+    }
+  },
   deleteGalaxy: {
     type: galaxyType,
     args: {
-      _id: {
-        name: '_id',
+      id: {
+        name: 'id',
         type: new GraphQLNonNull(GraphQLID)
       }
     },
     async resolve(root, params, context, options) {
-      const projection = getProjection(options.fieldNodes[0]);
       const deletedGalaxy = await GalaxyModel
-        .findByIdAndRemove(params._id, {
-          select: projection
-        })
+        .findByIdAndRemove(params.id)
         .exec();
 
       if (!deletedGalaxy) {

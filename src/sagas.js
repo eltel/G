@@ -1,69 +1,74 @@
-import { takeLatest, delay } from 'redux-saga';
-import { call, select, put } from 'redux-saga/effects';
+import { delay } from 'redux-saga';
+import { call, select, put, takeLatest } from 'redux-saga/effects';
 import _ from 'lodash';
 
-import * as actions from './actions';
+import actions from './actions';
 import postQuery from './api';
+
+console.log('Sagas', actions);
 
 const apiMap = [
   'fetchUsers',
-  'userLogin',
-  'userLogout',
+  // 'userLogin',
+  // 'userLogout',
   'createUser',
   'editUser',
   'deleteUser',
-  'addTrust',
-  'removeTrust',
-  'addWatch',
-  'removeWatch',
-  'addSupport',
-  'removeSupport',
-  'setTrustDegrees',
-  'fetchUserConstellations',
-  'createConstellation',
-  'editConstellation',
-  'deleteConstellation',
-  'listJournalists',
-  'listPublications',
-  'listNodes',
-  'listTrees',
-  'addTree',
-  'removeTree',
-  'addEditor',
-  'removeEditor',
-  'removeEditorContent',
-  'addNode',
-  'editNode',
-  'deleteNode',
-  'addEdge',
-  'editEdge',
-  'deleteEdge',
-  'fetchUserGalaxies',
+  // 'addTrust',
+  // 'removeTrust',
+  // 'addWatch',
+  // 'removeWatch',
+  // 'addSupport',
+  // 'removeSupport',
+  // 'setTrustDegrees',
+  // 'fetchSingleConstellation',
+  // 'fetchUserConstellations',
+  // 'createConstellation',
+  // 'editConstellation',
+  // 'deleteConstellation',
+  // 'listJournalists',
+  // 'listPublications',
+  // 'listNodes',
+  // 'listTrees',
+  // 'addTree',
+  // 'removeTree',
+  // 'addEditor',
+  // 'removeEditor',
+  // 'removeEditorContent',
+  'fetchSingleGalaxy',
+  'fetchAllGalaxies',
+  // 'fetchUserGalaxies',
   'createGalaxy',
   'editGalaxy',
   'deleteGalaxy',
-  'listConstellations',
-  'addConstellation',
-  'removeConstellation',
-  'editFlter',
+  'fetchSingleConstellation',
+  'fetchAllConstellations',
+  // 'fetchUserConstellations,'
+  'createConstellation',
+  'editConstellation',
+  'deleteConstellation',
+  // 'editFlter',
   'fetchHypernode',
-  'listHypernodeConstellations',
+  'fetchAllRealities',
+  // 'listHypernodeConstellations',
   'createReality',
   'editReality',
   'deleteReality',
-  'attachRealities',
-  'createTree',
-  'editTree',
-  'deleteTree',
-  'listTreeConstellations',
+  // 'attachRealities',
+  // 'createTree',
+  // 'editTree',
+  // 'deleteTree',
+  // 'listTreeConstellations',
 ];
 
 function* fetchEntitySaga(entity, action) {
   const { response } = yield call(postQuery, action);
-  if (!response.error) {
+  console.log('saga response', response);
+  console.log('saga entity', entity);
+  if (!response.errors || !response.errors.length) {
     yield put(entity.success(response));
   } else {
-    yield put(entity.failure(response.error));
+    yield put(entity.failure({ error: response.errors[0] }));
   }
 }
 

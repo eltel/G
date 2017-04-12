@@ -3,10 +3,22 @@
 import mongoose from 'mongoose';
 
 export default {
-  createdBy: {
-    type: mongoose.Schema.Types.ObjectId,
-  },
-  createdOn: {
-    type: Date,
+  meta: {
+    type: {
+      createdBy: {
+        type: {
+          _id: {
+            type: mongoose.Schema.Types.ObjectId,
+          },
+          name: {
+            type: String,
+          },
+        }
+      },
+      createdOn: {
+        type: Date,
+        default: Date.now,
+      },
+    },
   },
 };

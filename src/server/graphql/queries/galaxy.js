@@ -1,7 +1,8 @@
 import {
   GraphQLList,
   GraphQLString,
-  GraphQLNonNull
+  GraphQLNonNull,
+  GraphQLID,
 } from 'graphql';
 import { Types } from 'mongoose';
 
@@ -10,18 +11,18 @@ import getProjection from '../get-projection';
 import GalaxyModel from '../../models/galaxy';
 
 export default {
-  galaxy: {
+  galaxyById: {
     type: galaxyType,
     args: {
-      name: {
-        name: 'name',
-        type: new GraphQLNonNull(GraphQLString)
+      id: {
+        name: 'id',
+        type: new GraphQLNonNull(GraphQLID)
       }
     },
-    resolve(root, parroot, params, context, options) {
+    resolve(root, params, context, options) {
       const projection = getProjection(options.fieldNodes[0]);
       return GalaxyModel
-        .findOne({ name: params.name })
+        .findById(params.id)
         .select(projection)
         .exec();
     }
@@ -36,5 +37,21 @@ export default {
         .select(projection)
         .exec();
     }
-  }
+  },
+  // userGalaxies: {
+  //   type: new GraphQLList(galaxyType),
+  //   args: {
+  //     user: {
+  //       name: 'user',
+  //       type: new GraphQLNonNull(GraphQLID),
+  //     },
+  //   },
+  //   resolve(root, params, context, options) {
+  //     const projection = getProjection(options.fieldNodes[0]);
+  //     return GalaxyModel
+  //       .find()
+  //       .select(projection)
+  //       .exec();
+  //   }
+  // }
 };

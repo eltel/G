@@ -18,7 +18,7 @@ export default {
         type: new GraphQLNonNull(GraphQLString)
       }
     },
-    resolve(root, parroot, params, context, options) {
+    resolve(root, params, context, options) {
       const projection = getProjection(options.fieldNodes[0]);
       return UserModel
         .findOne({ handle: params.handle })

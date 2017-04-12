@@ -8,7 +8,7 @@ import {
   GraphQLID
 } from 'graphql';
 
-import { GalaxyConstellationInput } from './subdocuments';
+import { RelationInput, MetaInput } from './subdocuments';
 
 export default new GraphQLInputObjectType({
   name: 'GalaxyInput',
@@ -16,20 +16,23 @@ export default new GraphQLInputObjectType({
     _id: {
       type: GraphQLID,
     },
+    meta: {
+      type: MetaInput,
+    },
     avatar: {
       type: GraphQLString,
     },
     trees: {
-      type: new GraphQLList(GraphQLID),
+      type: new GraphQLList(RelationInput),
     },
     trustedBy: {
-      type: new GraphQLList(GraphQLID),
+      type: new GraphQLList(RelationInput),
     },
     theme: {
-      type: GraphQLID,
+      type: RelationInput,
     },
     constellations: {
-      type: new GraphQLList(GalaxyConstellationInput),
+      type: new GraphQLList(RelationInput),
     },
   }
 });

@@ -1,3 +1,3 @@
-export default function core(state) {
+export default function core(state = {}) {
     return state;
 }

@@ -6,7 +6,7 @@ import {
   GraphQLID
 } from 'graphql';
 
-import { TreeConstellationInput } from './subdocuments';
+import { RelationInput, MetaInput } from './subdocuments';
 
 export default new GraphQLInputObjectType({
   name: 'TreeInput',
@@ -14,8 +14,11 @@ export default new GraphQLInputObjectType({
     _id: {
       type: GraphQLID,
     },
+    meta: {
+      type: MetaInput,
+    },
     constellations: {
-      type: new GraphQLList(TreeConstellationInput),
+      type: new GraphQLList(RelationInput),
     },
     category: {
       type: new GraphQLList(GraphQLString),

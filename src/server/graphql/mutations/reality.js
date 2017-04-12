@@ -8,9 +8,10 @@ import realityInputType from '../types/reality-input';
 import realityType from '../types/reality';
 import getProjection from '../get-projection';
 import RealityModel from '../../models/reality';
+import HypernodeModel from '../../models/hypernode';
 
 export default {
-  addReality: {
+  createReality: {
     type: GraphQLBoolean,
     args: {
       data: {
@@ -20,6 +21,11 @@ export default {
     },
     async resolve(root, params, context, options) {
       console.log('BARG!');
+      if (!params.data.hypernode) {
+        const hypernodeModel = new HypernodeModel();
+        const newHypernode = await hypernodeModel.save();
+        params.data.hypernode = newHypernode._id;
+      }
       const realityModel = new RealityModel(params.data);
       const newReality = await realityModel.save();
 
@@ -27,6 +33,23 @@ export default {
         throw new Error('Error adding new reality');
       }
       return true;
+    }
+  },
+  editReality: {
+    type: GraphQLBoolean,
+    args: {
+      id: {
+        name: 'id',
+        type: new GraphQLNonNull(GraphQLID),
+      },
+      data: {
+        name: 'data',
+        type: new GraphQLNonNull(realityInputType),
+      },
+    },
+    async resolve(root, params, context, options) {
+      return RealityModel.update({ _id: params.id }, params.data)
+        .exec();
     }
   },
   deleteReality: {
