@@ -24,7 +24,7 @@ const style = {
 class Core extends React.Component {
   render() {
     return (
-			<div>     
+      <div className="container core" id="core">
         <Title direction={this.props.direction}></Title>
 				<div id="search" className="search">
           <SearchBar onTermChange={this.props} />

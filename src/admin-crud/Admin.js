@@ -1,40 +1,16 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
+import { Link } from 'react-router';
 
 import actions from '../actions';
 
-class Admin extends Component {
-    constructor() {
-        super();
-    }
+const Admin = props => (
+    <div>
+        <h1>Developer tools</h1>
+        {props.children}
+        <ul>
+            <li><Link to="/admin/realities/">Realities</Link></li>
+        </ul>
+    </div>
+);
 
-    componentWillMount() {
-        this.props.fetchAllRealities();
-        this.props.fetchAllConstellations();
-    }
-
-    render() {
-        return <div>Hello world!</div>;
-    }
-}
-
-const mapStateToProps = state => ({
-    constellations: state.constellations.items,
-    selectedConstellation: state.constellations.constellation,
-    userprofiles: state.userprofiles.items,
-    realities: state.universe.realities,
-    hypernodes: state.universe.hypernodes,
-    galaxies: state.galaxies.items,
-    selectedGalaxy: state.galaxies.galaxy,
-});
-
-const mapDispatchToProps = {
-    fetchUsers: actions.fetchUsers.request,
-    fetchAllRealities: actions.fetchAllRealities.request,
-    fetchHypernode: actions.fetchHypernode.request,
-    fetchAllGalaxies: actions.fetchAllGalaxies.request,
-    fetchAllConstellations: actions.fetchAllConstellations.request,
-    fetchSingleConstellation: actions.fetchSingleConstellation.request,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Admin);
+export default Admin;

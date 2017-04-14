@@ -87,7 +87,7 @@ input#searchInput {
   min-width: 130px;
 }
 
-.nav button {
+.nav .link {
   border: none;
 	background: transparent;
 	margin-right: 1em;
@@ -95,7 +95,7 @@ input#searchInput {
   width: 45px;
 }
 
-.nav button img {
+.nav .link img {
 		height: 35px;
 		text-align: left;
 	  margin-right: 5em !important;
@@ -151,4 +151,33 @@ outline: 0;
 }
 .nav-search input::-webkit-input-placeholder {
 	color: #999;
+}
+
+.realityTable {
+  font: 12px sans-serif;
+  color: #000;
+  margin: 30px auto;
+  max-width: 600px;
+}
+
+.realityTable td,
+.realityTable th {
+  border: 1px solid black;
+}
+
+.editReality {
+  font: 12px sans-serif;
+  color: #000;
+  text-align: left;
+  max-width: 400px;
+  margin: 30px auto;
+}
+
+.editReality div {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin: 10px;
 }

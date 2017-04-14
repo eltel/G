@@ -20,3 +20,6 @@ export const deleteReality = actionCreators(DELETE_REALITY);
 
 export const ATTACH_REALITIES = createRequestTypes('ATTACH_REALITIES');
 export const attachRealities = actionCreators(ATTACH_REALITIES);
+
+export const SELECT_REALITY = 'SELECT_REALITY';
+export const selectReality = id => action(SELECT_REALITY, { id });

@@ -28,5 +28,5 @@ export const REMOVE_CONSTELLATION = 'REMOVE_CONSTELLATION';
 export const removeConstellation = constellation => action(REMOVE_CONSTELLATION, constellation);
 
 export const EDIT_FILTER = 'EDIT_FILTER';
-export const editFlter = filter => action(EDIT_FILTER, filter);
+export const editFlter = filter => action(EDIT_FILTER, { filter });
 

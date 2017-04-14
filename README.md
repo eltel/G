@@ -21,7 +21,7 @@ Overview and development notes can be found in the file `docs` folder.
 * Make sure you've installed the latest version of mongodb and node.js
 * Make sure you've installed create-react-app locally if none is available run 'yarn install -g create-react-app'
 * Do `yarn install` to install dependencies
-* Rebuild client side code to incorporate changes by running `yarn run build`.
+* Rebuild client side code to incorporate changes by running `yarn run build-dev` or `yarn run build-prod`.
 
 
 ### Running The App

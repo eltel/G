@@ -20,7 +20,6 @@ export default {
       }
     },
     async resolve(root, params, context, options) {
-      console.log('BARG!');
       if (!params.data.hypernode) {
         const hypernodeModel = new HypernodeModel();
         const newHypernode = await hypernodeModel.save();

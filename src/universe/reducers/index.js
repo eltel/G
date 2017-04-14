@@ -2,14 +2,11 @@ import * as actions from '../actions';
 import _ from 'lodash';
 
 export default function universe(state = {
-    realities: {
+    items: {
         byId: {},
         allIds: [],
     },
-    hypernodes: {
-        byId: {},
-        allIds: [],
-    },
+    reality: {},
     fetching: false,
     editing: false,
 }, action) {
@@ -17,21 +14,25 @@ export default function universe(state = {
         case actions.FETCH_ALL_REALITIES.REQUEST:
             return { ...state, fetching: true };
         case actions.FETCH_ALL_REALITIES.SUCCESS:
-            const items = { byId: {}, allIds: [] };
+            const allRealities = { byId: {}, allIds: [] };
             _.forEach(action.response.data.allRealities, (item) => {
-                items.byId[item._id] = item;
-                items.allIds.push(item._id);
+                allRealities.byId[item._id] = item;
+                allRealities.allIds.push(item._id);
             });
-            return { ...state, realities: items, fetching: false };
+            return { ...state, items: allRealities, fetching: false };
         case actions.FETCH_ALL_REALITIES.FAILURE:
             return { ...state, fetching: false };
         case actions.FETCH_HYPERNODE.REQUEST:
             return { ...state, fetching: true };
         case actions.FETCH_HYPERNODE.SUCCESS:
-            const hypernodes = _.cloneDeep(state.hypernodes);
-            hypernodes.byId[action.response.data.realitiesInHypernode._id] = action.response.data;
-            hypernodes.push(action.response.data.realitiesInHypernode);
-            return { ...state, hypernodes, fetching: false };
+            const realities = _.cloneDeep(state.realities);
+            _.forEach(action.response.data.realitiesInHypernode, (node) => {
+                if (!realities.byId[node._id]) {
+                    realities.byId[node._id] = node;
+                    realities.allIds.push(node._id);
+                }
+            });
+            return { ...state, items: realities, fetching: false };
         case actions.FETCH_HYPERNODE.FAILURE:
             return { ...state, fetching: false };
         case actions.CREATE_REALITY.REQUEST:
@@ -52,6 +53,11 @@ export default function universe(state = {
             return { ...state, editing: false };
         case actions.DELETE_REALITY.FAILURE:
             return { ...state, editing: false };
+        case actions.SELECT_REALITY:
+            if (action.id) {
+                return { ...state, reality: state.items.byId[action.id] };
+            }
+            return { ...state, reality: {} };
         default:
             return state;
     }

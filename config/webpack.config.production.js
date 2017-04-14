@@ -3,16 +3,17 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    javascript: ['babel-polyfill', './src/index.js'],
+    javascript: ['babel-polyfill', './client/index.js'],
   },
   output: {
-    path: __dirname + '/../build',
-    filename: 'static/js/bundle.js',
+    path: __dirname + '/dist',
+    filename: 'bundle.js',
   },
+  devtool: 'cheap-module-source-map',
   module: {
     loaders: [
       {
-        test: /\.(js|jsx)$/,
+        test: /.js?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
@@ -28,13 +29,13 @@ module.exports = {
         test: /\.scss$/,
         loaders: ['style', 'css', 'sass'],
       },
-      {
-        test: /\.svg$/,
-        loader: 'file',
-        query: {
-          name: '/static/media/[name].[hash:8].[ext]'
-        }
-      },
     ],
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production'),
+      },
+    }),
+  ],
 };

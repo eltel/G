@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import { reducer as formReducer } from 'redux-form';
 
 import constellations from './constellations/reducers';
 // import graph from './constellations/graph/reducers';
@@ -16,6 +17,7 @@ const appReducer = combineReducers({
   universe,
   // metaverse,
   userprofiles,
+  form: formReducer,
 });
 
 const rootReducer = (state, action) => {
