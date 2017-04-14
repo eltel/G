@@ -29,24 +29,38 @@ export default {
       return true;
     }
   },
+  editUser: {
+    type: GraphQLBoolean,
+    args: {
+      id: {
+        name: 'id',
+        type: new GraphQLNonNull(GraphQLID),
+      },
+      data: {
+        name: 'data',
+        type: new GraphQLNonNull(userInputType),
+      },
+    },
+    async resolve(root, params, context, options) {
+      return UserModel.update({ _id: params.id }, params.data)
+        .exec();
+    }
+  },
   deleteUser: {
     type: userType,
     args: {
-      _id: {
-        name: '_id',
+      id: {
+        name: 'id',
         type: new GraphQLNonNull(GraphQLID)
       }
     },
     async resolve(root, params, context, options) {
-      const projection = getProjection(options.fieldNodes[0]);
       const deletedUser = await UserModel
-        .findByIdAndRemove(params._id, {
-          select: projection
-        })
+        .findByIdAndRemove(params.id)
         .exec();
 
       if (!deletedUser) {
-        throw new Error('Error deleting blog post');
+        throw new Error('Error deleting user');
       }
 
       return deletedUser;

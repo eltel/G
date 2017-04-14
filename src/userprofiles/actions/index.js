@@ -1,4 +1,4 @@
-import { createRequestTypes, actionCreators, action } from '../../actions';
+import { createRequestTypes, actionCreators, action } from '../../actionCreators';
 
 export const FETCH_USERS = createRequestTypes('FETCH_USERS');
 export const fetchUsers = actionCreators(FETCH_USERS);

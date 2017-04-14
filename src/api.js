@@ -11,21 +11,21 @@ const apiUrl = process.env.NODE_ENV === 'production' ? 'http://getgee.herokuapp.
 
 const queries = {
   ...constellations,
-  ...core,
+  // ...core,
   ...galaxies,
   ...universe,
   ...metaverse,
   ...userprofiles,
 };
 
-export default function postQuery(action, entity) {
+export default function postQuery(action) {
   return fetch(apiUrl, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
     },
-    body: queries[action.type](action),
+    body: JSON.stringify(queries[action.type](action)),
   })
   .then(rawResponse => rawResponse.json())
   .then(response => ({ response }),

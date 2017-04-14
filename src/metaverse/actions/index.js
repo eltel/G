@@ -1,4 +1,4 @@
-import { createRequestTypes, actionCreators, action } from '../../actions';
+import { createRequestTypes, actionCreators, action } from '../../actionCreators';
 
 export const CREATE_TREE = createRequestTypes('CREATE_TREE');
 export const createTree = actionCreators(CREATE_TREE);

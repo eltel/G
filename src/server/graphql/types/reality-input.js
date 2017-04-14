@@ -7,11 +7,16 @@ import {
   GraphQLID,
 } from 'graphql';
 
+import { MetaInput } from './subdocuments';
+
 export default new GraphQLInputObjectType({
   name: 'RealityInput',
   fields: {
     _id: {
       type: GraphQLID,
+    },
+    meta: {
+      type: MetaInput,
     },
     typeP:{
       type: GraphQLBoolean,

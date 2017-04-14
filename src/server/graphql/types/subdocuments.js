@@ -6,8 +6,22 @@ import {
   GraphQLID,
 } from 'graphql';
 
-export const ConstellationTree = new GraphQLObjectType({
-  name: 'ConstellationTree',
+import GraphQLDate from 'graphql-date';
+
+export const Relation = new GraphQLObjectType({
+  name: 'Relation',
+  fields: {
+    _id: {
+      type: GraphQLID,
+    },
+    name: {
+      type: GraphQLString,
+    },
+  },
+});
+
+export const RelationInput = new GraphQLInputObjectType({
+  name: 'RelationInput',
   fields: {
     _id: {
       type: GraphQLID,
@@ -18,28 +32,28 @@ export const ConstellationTree = new GraphQLObjectType({
   },
 });
 
-export const ConstellationTrust = new GraphQLObjectType({
-  name: 'ConstellationTrust',
+export const Meta = new GraphQLObjectType({
+  name: 'Meta',
   fields: {
-    _id: {
-      type: GraphQLID,
+    createdBy: {
+      type: Relation,
     },
-    name: {
-      type: GraphQLID,
-    },
-  }
+    createdOn: {
+      type: GraphQLDate,
+    }
+  },
 });
 
-export const ConstellationTheme = new GraphQLObjectType({
-  name: 'ConstellationTheme',
+export const MetaInput = new GraphQLInputObjectType({
+  name: 'MetaInput',
   fields: {
-    _id: {
-      type: GraphQLID,
+    createdBy: {
+      type: RelationInput,
     },
-    name: {
-      type: GraphQLID,
-    },
-  }
+    createdOn: {
+      type: GraphQLDate,
+    }
+  },
 });
 
 export const Edge = new GraphQLObjectType({
@@ -60,66 +74,6 @@ export const Edge = new GraphQLObjectType({
   },
 });
 
-export const GalaxyConstellation = new GraphQLObjectType({
-  name: 'GalaxyConstellation',
-  fields: {
-    _id: {
-      type: GraphQLID,
-    },
-    name: {
-      type: GraphQLString,
-    },
-  },
-});
-
-export const TreeConstellation = new GraphQLObjectType({
-  name: 'TreeConstellation',
-  fields: {
-    _id: {
-      type: GraphQLID,
-    },
-    name: {
-      type: GraphQLString,
-    },
-  },
-});
-
-export const ConstellationTreeInput = new GraphQLInputObjectType({
-  name: 'ConstellationTreeInput',
-  fields: {
-    _id: {
-      type: GraphQLID,
-    },
-    name: {
-      type: GraphQLID,
-    },
-  },
-});
-
-export const ConstellationTrustInput = new GraphQLInputObjectType({
-  name: 'ConstellationTrustInput',
-  fields: {
-    _id: {
-      type: GraphQLID,
-    },
-    name: {
-      type: GraphQLID,
-    },
-  }
-});
-
-export const ConstellationThemeInput = new GraphQLInputObjectType({
-  name: 'ConstellationThemeInput',
-  fields: {
-    _id: {
-      type: GraphQLID,
-    },
-    name: {
-      type: GraphQLID,
-    },
-  }
-});
-
 export const EdgeInput = new GraphQLInputObjectType({
   name: 'EdgeInput',
   fields: {
@@ -134,30 +88,6 @@ export const EdgeInput = new GraphQLInputObjectType({
     },
     documentation: {
       type: new GraphQLList(GraphQLString),
-    },
-  },
-});
-
-export const GalaxyConstellationInput = new GraphQLInputObjectType({
-  name: 'GalaxyConstellationInput',
-  fields: {
-    _id: {
-      type: GraphQLID,
-    },
-    name: {
-      type: GraphQLString,
-    },
-  },
-});
-
-export const TreeConstellationInput = new GraphQLInputObjectType({
-  name: 'TreeConstellationInput',
-  fields: {
-    _id: {
-      type: GraphQLID,
-    },
-    name: {
-      type: GraphQLString,
     },
   },
 });

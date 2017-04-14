@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 import logo from '../components/buttons/svg/logo.svg';
 import search from '../components/buttons/svg/search.svg';
@@ -24,12 +25,12 @@ class Navigation extends React.Component {
     return (
       <div className="nav">
         <div className="nav-left">
-			    <button id="home" name="home" value="home" onClick='window.location="http://localhost:3000/"'><img src={logo} /></button>
-          <button id="home" name="search" value="search" onClick='window.location="http://localhost:3000/"'><img src={search} /></button>
-          <button id="home" name="add" value="add" onClick='window.location="http://localhost:3000/"'><img src={add} /></button>
+			    <Link className="link" to="/"><img src={logo} /></Link>
+          <Link className="link" to="/"><img src={search} /></Link>
+          <Link className="link" to="/"><img src={add} /></Link>
         </div>
         <div className="nav-right">
-          <button id="user" name="user" value="user" onClick='window.location="http://localhost:3000/"'><img src={user} /></button>
+          <Link className="link" to="/"><img src={user} /></Link>
         </div>    
       </div>
     );

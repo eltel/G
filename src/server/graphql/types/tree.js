@@ -5,7 +5,7 @@ import {
   GraphQLID
 } from 'graphql';
 
-import { TreeConstellation } from './subdocuments';
+import { Relation, Meta } from './subdocuments';
 
 export default new GraphQLObjectType({
   name: 'Tree',
@@ -13,8 +13,11 @@ export default new GraphQLObjectType({
     _id: {
       type: GraphQLID,
     },
+    meta: {
+      type: Meta,
+    },
     constellations: {
-      type: new GraphQLList(TreeConstellation),
+      type: new GraphQLList(Relation),
     },
     category: {
       type: new GraphQLList(GraphQLString),

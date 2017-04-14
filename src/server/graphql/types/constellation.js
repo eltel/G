@@ -7,13 +7,18 @@ import {
   GraphQLID
 } from 'graphql';
 
-import { ConstellationTree, ConstellationTrust, ConstellationTheme, Edge } from './subdocuments';
+import { Relation, Edge, Meta } from './subdocuments';
+
+import Reality from './reality';
 
 export default new GraphQLObjectType({
   name: 'Constellation',
   fields: {
     _id: {
       type: GraphQLID,
+    },
+    meta: {
+      type: Meta,
     },
     editors: {
       type: new GraphQLList(GraphQLID),
@@ -22,16 +27,16 @@ export default new GraphQLObjectType({
       type: GraphQLString,
     },
     trees: {
-      type: new GraphQLList(ConstellationTree),
+      type: new GraphQLList(Relation),
     },
     trustedBy: {
-      type: new GraphQLList(ConstellationTrust),
+      type: new GraphQLList(Relation),
     },
     theme: {
-      type: ConstellationTheme,
+      type: Relation,
     },
     nodes: {
-      type: new GraphQLList(GraphQLID),
+      type: new GraphQLList(Reality),
     },
     edges: {
       type: new GraphQLList(Edge),

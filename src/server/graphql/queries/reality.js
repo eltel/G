@@ -19,7 +19,7 @@ export default {
         type: new GraphQLNonNull(GraphQLID)
       }
     },
-    resolve(root, parroot, params, context, options) {
+    resolve(root, params, context, options) {
       const projection = getProjection(options.fieldNodes[0]);
       return RealityModel
         .findOne({ handle: params.handle })
@@ -35,7 +35,7 @@ export default {
         type: new GraphQLList(GraphQLID),
       }
     },
-    resolve(root, parroot, params, context, options) {
+    resolve(root, params, context, options) {
       const projection = getProjection(options.fieldNodes[0]);
 
       return RealityModel
@@ -56,7 +56,7 @@ export default {
         type: new GraphQLNonNull(GraphQLString),
       },
     },
-    resolve(root, parroot, params, context, options) {
+    resolve(root, params, context, options) {
       const projection = getProjection(options.fieldNodes[0]);
       return RealityModel
         .find({ name: params.name })
@@ -72,7 +72,7 @@ export default {
         type: new GraphQLNonNull(GraphQLID),
       },
     },
-    resolve(root, parroot, params, context, options) {
+    resolve(root, params, context, options) {
       const projection = getProjection(options.fieldNodes[0]);
       return RealityModel
         .find({ hypernode: params.hypernode })
@@ -83,7 +83,7 @@ export default {
   allRealities: {
     type: new GraphQLList(realityType),
     args: {},
-    resolve(root, parroot, params, context, options) {
+    resolve(root, params, context, options) {
       const projection = getProjection(options.fieldNodes[0]);
       return RealityModel
         .find()

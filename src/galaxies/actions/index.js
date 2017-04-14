@@ -1,5 +1,10 @@
-import { createRequestTypes, actionCreators, action } from '../../actions';
+import { createRequestTypes, actionCreators, action } from '../../actionCreators';
 
+export const FETCH_SINGLE_GALAXY = createRequestTypes('FETCH_SINGLE_GALAXY');
+export const fetchSingleGalaxy = actionCreators(FETCH_SINGLE_GALAXY);
+
+export const FETCH_ALL_GALAXIES = createRequestTypes('FETCH_ALL_GALAXIES');
+export const fetchAllGalaxies = actionCreators(FETCH_ALL_GALAXIES);
 
 export const FETCH_USER_GALAXIES = createRequestTypes('FETCH_USER_GALAXIES');
 export const fetchUserGalaxies = actionCreators(FETCH_USER_GALAXIES);
@@ -13,14 +18,15 @@ export const editGalaxy = actionCreators(EDIT_GALAXY);
 export const DELETE_GALAXY = createRequestTypes('DELETE_GALAXY');
 export const deleteGalaxy = actionCreators(DELETE_GALAXY);
 
-export const LIST_CONSTELLATIONS = createRequestTypes('LIST_CONSTELLATIONS');
-export const listConstellations = actionCreators(LIST_CONSTELLATIONS);
+// export const LIST_CONSTELLATIONS = createRequestTypes('LIST_CONSTELLATIONS');
+// export const listConstellations = actionCreators(LIST_CONSTELLATIONS);
 
-export const ADD_CONSTELLATION = createRequestTypes('ADD_CONSTELLATION');
-export const addConstellation = actionCreators(ADD_CONSTELLATION);
+export const ADD_CONSTELLATION = 'ADD_CONSTELLATION';
+export const addConstellation = constellation => action(ADD_CONSTELLATION, constellation);
 
-export const REMOVE_CONSTELLATION = createRequestTypes('REMOVE_CONSTELLATIONS');
-export const removeConstellation = actionCreators(REMOVE_CONSTELLATION);
+export const REMOVE_CONSTELLATION = 'REMOVE_CONSTELLATION';
+export const removeConstellation = constellation => action(REMOVE_CONSTELLATION, constellation);
 
-export const EDIT_FILTER = createRequestTypes('EDIT_FILTER');
-export const editFlter = actionCreators(EDIT_FILTER);
+export const EDIT_FILTER = 'EDIT_FILTER';
+export const editFlter = filter => action(EDIT_FILTER, { filter });
+

@@ -15,7 +15,7 @@ export function action(type, payload = {}) {
 
 export function actionCreators(type) {
   return {
-    request: (args) => action(type.REQUEST, { args }),
+    request: (args) => action(type.REQUEST, args),
     success: (response) => action(type.SUCCESS, { response }),
     failure: (error) => action(type.FAILURE, { error }),
     types: type,

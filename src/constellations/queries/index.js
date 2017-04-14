@@ -1,59 +1,121 @@
 export default {
-    FETCH_USER_CONSTELLATIONS_REQUEST: function (action) {
-
-    },
-    CREATE_CONSTELLATIONS_REQUEST: function (action) {
-
-    },
-    EDIT_CONSTELLATION_REQUEST: function (action) {
-
-    },
-    DELETE_CONSTELLATION_REQUEST: function (action) {
-
-    },
-    LIST_JOURNALISTS_REQUEST: function (action) {
-
-    },
-    LIST_PUBLICATIONS_REQUEST: function (action) {
-
-    },
-    LIST_NODES_REQUEST: function (action) {
-
-    },
-    LIST_TREES_REQUEST: function (action) {
-
-    },
-    ADD_TREE_REQUEST: function (action) {
-
-    },
-    REMOVE_TREE_REQUEST: function (action) {
-
-    },
-    ADD_EDITOR_REQUEST: function (action) {
-
-    },
-    REMOVE_EDITOR_REQUEST: function (action) {
-
-    },
-    REMOVE_EDITOR_CONTENT_REQUEST: function (action) {
-
-    },
-    ADD_NODE_REQUEST: function (action) {
-
-    },
-    EDIT_NODE_REQUEST: function (action) {
-
-    },
-    DELETE_NODE_REQUEST: function (action) {
-
-    },
-    ADD_EDGE_REQUEST: function (action) {
-
-    },
-    EDIT_EDGE_REQUEST: function (action) {
-
-    },
-    DELETE_EDGE_REQUEST: function (action) {
-
-    },
+    FETCH_SINGLE_CONSTELLATION_REQUEST: action => ({
+        query: `query ($id:ID!) {
+            constellationById (id:$id) {
+                _id,
+                meta {
+                    createdBy {
+                        _id,
+                        name
+                    },
+                    createdOn
+                },
+                editors,
+                avatar,
+                trees {
+                    _id,
+                    name,
+                },
+                trustedBy {
+                    _id,
+                    name,
+                },
+                theme {
+                    _id,
+                    name,
+                },
+                nodes {
+                    _id,
+                    meta {
+                        createdBy {
+                            _id,
+                            name
+                        },
+                        createdOn
+                    },
+                    typeP,
+                    typeL,
+                    typeT,
+                    hypernode,
+                    nodeType,
+                    name,
+                    language,
+                    temporal,
+                    description,
+                    geotags,
+                    image
+                },
+                edges {
+                    toId,
+                    fromId,
+                    description,
+                    documentation
+                },
+                trustRequired
+            }
+        }`,
+        variables: {
+            id: action.id,
+        },
+    }),
+    FETCH_ALL_CONSTELLATIONS_REQUEST: action => ({
+        query: `query {
+            allConstellations {
+                _id,
+                editors,
+                avatar,
+                theme {
+                    name,
+                },
+                nodes {
+                    _id,
+                },
+                trustRequired
+            }
+        }`,
+    }),
+    FETCH_USER_CONSTELLATIONS_REQUEST: action => ({
+        query: `query ($id:ID!) {
+            userConstellations (id:$id) {
+                _id,
+                editors,
+                avatar,
+                theme {
+                    name,
+                },
+                nodes {
+                    _id,
+                },
+                trustRequired
+            }
+        }`,
+        variables: {
+            user: action.user,
+        },
+    }),
+    CREATE_CONSTELLATION_REQUEST: action => ({
+        query: `mutation ($data:ConstellationInput!) {
+            createConstellation (data:$data)
+        }`,
+        variables: {
+            data: action.data,
+        },
+    }),
+    EDIT_CONSTELLATION_REQUEST: action => ({
+        query: `mutation ($data:ConstellationInput!, $id:ID!) {
+            editConstellation (data:$data, id:$id)
+        }`,
+        variables: {
+            id: action.id,
+            data: action.data,
+        },
+    }),
+    DELETE_CONSTELLATION_REQUEST: action => ({
+        query: `query ($id:ID!) {
+            deleteConstellation
+        }`,
+        variables: {
+            id: action.id,
+        },
+    }),
 };

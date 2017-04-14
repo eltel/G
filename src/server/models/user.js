@@ -2,7 +2,12 @@
 
 import mongoose from 'mongoose';
 
+import Meta from './meta';
+
 const userSchema = new mongoose.Schema({
+  meta: {
+    type: Meta,
+  },
   handle: {
     type: String,
     required: true,

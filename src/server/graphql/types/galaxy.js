@@ -7,13 +7,16 @@ import {
   GraphQLID
 } from 'graphql';
 
-import { GalaxyConstellation } from './subdocuments';
+import { Relation, Meta } from './subdocuments';
 
 export default new GraphQLObjectType({
   name: 'Galaxy',
   fields: {
     _id: {
       type: GraphQLID,
+    },
+    meta: {
+      type: Meta,
     },
     name: {
       type: GraphQLString,
@@ -22,16 +25,16 @@ export default new GraphQLObjectType({
       type: GraphQLString,
     },
     trees: {
-      type: new GraphQLList(GraphQLID),
+      type: new GraphQLList(Relation),
     },
     trustedBy: {
-      type: new GraphQLList(GraphQLID),
+      type: new GraphQLList(Relation),
     },
     theme: {
-      type: GraphQLID,
+      type: Relation,
     },
     constellations: {
-      type: new GraphQLList(GalaxyConstellation),
+      type: new GraphQLList(Relation),
     },
   }
 });

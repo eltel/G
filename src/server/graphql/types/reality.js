@@ -6,11 +6,16 @@ import {
   GraphQLID
 } from 'graphql';
 
+import { Meta } from './subdocuments';
+
 export default new GraphQLObjectType({
   name: 'Reality',
   fields: {
     _id: {
       type: GraphQLID,
+    },
+    meta: {
+      type: Meta,
     },
     typeP:{
       type: GraphQLBoolean,

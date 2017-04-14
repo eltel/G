@@ -6,7 +6,7 @@ import rootReducer from './reducers';
 
 const sagaMiddleware = createSagaMiddleware();
 
-const storedAccount = JSON.parse(localStorage.getItem('account'));
+// const storedAccount = JSON.parse(localStorage.getItem('account'));
 
 const initialState = {};
 
