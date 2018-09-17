@@ -13,8 +13,7 @@ class Title extends React.Component {
     return (
       <div>
         <h2>
-				{heading}	
-				</h2>
+					 </h2>
       </div>
     );
   }
