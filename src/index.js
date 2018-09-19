@@ -5,7 +5,8 @@ import {Router, IndexRoute, Route, browserHistory} from 'react-router';
 
 import store from './store';
 import App from './App';
-import Core from './core/components/core.jsx';
+import Core from './core/components/Core.js';
+import Add from './core/components/Add';
 import Admin from './admin-crud/Admin';
 // import ConstellationsContainer from './admin-crud/constellations/Container';
 // import ViewConstellations from './admin-crud/constellations/ViewConstellations';
@@ -21,15 +22,17 @@ import './index.css';
 
 render((
     <Provider store={store}>
-        <Router history={browserHistory}>
-            <Route path="/" component={App}>
-                <IndexRoute component={Core} />
-                <Route path="/admin" component={Admin}>
-                    <Route path="realities" component={ViewRealities} />
-                </Route>
-                <Route path="*" component={NotFound} />
-            </Route>
-        </Router>
+      <Router history={browserHistory}>
+        <Route exact path="/" component={App}>
+          <Route path="/add" component={Add} />
+
+          <IndexRoute component={Core} />
+          <Route path="/admin" component={Admin}>
+            <Route path="realities" component={ViewRealities} />
+          </Route>
+          <Route path="*" component={NotFound} />
+        </Route>
+      </Router>
     </Provider>),
   document.getElementById('root')
 );

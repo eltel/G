@@ -38,6 +38,7 @@
     "http-proxy-middleware": "0.17.2",
     "jest": "17.0.2",
     "json-loader": "0.5.4",
+    "nodemon": "^1.18.4",
     "object-assign": "4.1.0",
     "path-exists": "2.1.0",
     "postcss-loader": "1.0.0",
@@ -70,11 +71,12 @@
     "graphql": "^0.9.0",
     "graphql-date": "^1.0.3",
     "material-ui": "^0.17.0",
-    "mongoose": "^4.8.3",
+    "mongoose": "^4.10.8",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-modal": "^1.6.5",
     "react-no-ssr": "^1.1.0",
+    "react-router-dom": "^4.3.1",
     "react-simple-form-container": "^0.3.0",
     "react-tap-event-plugin": "^2.0.1",
     "redux": "^3.6.0"
@@ -84,7 +86,7 @@
     "build": "node scripts/build.js",
     "build-prod": "webpack -p --progress -c --config ./config/webpack.config.production.js",
     "build-dev": "webpack --progress -c --config ./config/webpack.config.dev.js",
-    "start": "node index.js",
+    "start": "nodemon index.js",
     "test": "node scripts/test.js --env=jsdom"
   },
   "jest": {

@@ -1,7 +1,7 @@
 import React from 'react';
-import Title from '../components/title.jsx';
+import Title from '../components/Title';
 import core from '../actions';
-import SearchBar from '../components/SearchBar.js';
+import SearchBar from '../components/SearchBar';
 
 const styles = {
   title: {
@@ -47,4 +47,3 @@ class Core extends React.Component {
 }
 
 export default Core;
-
