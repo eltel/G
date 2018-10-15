@@ -73,6 +73,7 @@
     "material-ui": "^0.17.0",
     "mongoose": "^4.10.8",
     "react": "^15.4.2",
+    "react-burger-menu": "^2.5.2",
     "react-dom": "^15.4.2",
     "react-modal": "^1.6.5",
     "react-no-ssr": "^1.1.0",
@@ -87,6 +88,7 @@
     "build-prod": "webpack -p --progress -c --config ./config/webpack.config.production.js",
     "build-dev": "webpack --progress -c --config ./config/webpack.config.dev.js",
     "start": "nodemon index.js",
+    "dev": "nodemon index.js",
     "test": "node scripts/test.js --env=jsdom"
   },
   "jest": {

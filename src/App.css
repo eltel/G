@@ -38,7 +38,8 @@ font-size: 40px;
 height:auto;
 width: auto;
 background-color: white;
-padding: 189px;
+/* padding: 189px; */
+padding: 1em;
 color: grey;
 }
 
@@ -53,6 +54,7 @@ width: auto;
 background-color: white;
 padding-top: 1em;
 padding-bottom: 1.75em;
+margin-bottom: 1em;
 color: black;
 }
 
@@ -62,9 +64,13 @@ color: black;
 }
 
 input#searchInput {
-    height: 5em;
+    /* height: 5em;
     width: 25em;
-    font-size: xx-large;
+    width: 100%;
+    font-size: xx-large; */
+    width: 85%;
+    height: 5em;
+    padding: 1em;
 }
 
 #search>input[name="search"], #search>input[name="create"] {
@@ -181,3 +187,7 @@ label {
   display: inline;
   margin: 10px;
 }
+
+.bm-overlay {
+  display: none;
+  }

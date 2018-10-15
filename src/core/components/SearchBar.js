@@ -12,13 +12,18 @@ class SearchBar extends Component {
     super(props);
 
     this.state = {
-      searchType: 'constellation',
+      searchType: '',
       searchInput: '',
     };
 
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleRadioChange = this.handleRadioChange.bind(this);
+
+    console.log('this.state', this.state);
   }
+
+
+
 	handleTextChange(event) {
     this.setState({
       searchInput: event.target.value,
@@ -30,11 +35,18 @@ class SearchBar extends Component {
       searchType: event.target.value,
     });
   }
+
+  handleSubmit(event) {
+    event.preventDefault();
+
+    alert(`You selected ${this.state.searchType} searchType.`);
+  }
 	render() {
+    console.log('this.props_sb', this.props);
     return (
       <div>
         <Title direction={this.props.direction}></Title>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <input
             id="searchInput"
             type="text"

@@ -7,6 +7,10 @@ import store from './store';
 import App from './App';
 import Core from './core/components/Core.js';
 import Add from './core/components/Add';
+import User from './core/components/User';
+import Login from './core/components/Login';
+import Logout from './core/components/Logout';
+import Signup from './core/components/Signup';
 import Admin from './admin-crud/Admin';
 // import ConstellationsContainer from './admin-crud/constellations/Container';
 // import ViewConstellations from './admin-crud/constellations/ViewConstellations';
@@ -25,7 +29,10 @@ render((
       <Router history={browserHistory}>
         <Route exact path="/" component={App}>
           <Route path="/add" component={Add} />
-
+          <Route path="/user" component={User} />
+          <Route path="/login" component={Login} />
+          <Route path="/logout" component={Logout} />
+          <Route path="/signup" component={Signup} />
           <IndexRoute component={Core} />
           <Route path="/admin" component={Admin}>
             <Route path="realities" component={ViewRealities} />

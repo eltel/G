@@ -10,10 +10,12 @@ class Title extends React.Component {
   render() {
     const {direction} = this.props;
     const heading = headings[direction];
+		console.log('this.props_title', this.props);
     return (
       <div>
         <h2>
-				{heading}	
+					Title
+				{heading}
 				</h2>
       </div>
     );

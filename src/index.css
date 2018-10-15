@@ -7,3 +7,20 @@ body {
   background-color: #f4f4f4;
   color: grey;
 }
+/*
+.bm-burger-button button {
+  left: 100% !important;
+  max-width: 20%;
+} */
+
+.bm-burger-button {
+  height: 35px;
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+}
+
+.bm-menu-wrap {
+  background-color: #0000001f;
+  padding: .5em;
+}
